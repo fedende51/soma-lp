@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Archivo', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Archivo', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+
+  --color-graphite: #0e1115;
+  --color-graphite-2: #151a20;
+  --color-paper: #f6f7f4;
+  --color-ink: #15181c;
+  --color-ink-soft: #4a5158;
+  --color-line: #dde0da;
+  --color-line-dark: #252b33;
+  --color-run: #27a567;
+  --color-run-bright: #34d58a;
+  --color-risk: #dfa12b;
+  --color-mono-gray: #8a929b;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-run);
+  outline-offset: 2px;
+}
+
+/* Large index numerals: transparent fill, 1px stroke */
+.outline-numeral {
+  -webkit-text-stroke: 1px var(--color-mono-gray);
+  color: transparent;
+}
+
+/* Capability marquee — pure CSS loop, pauses on hover */
+@keyframes marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  will-change: transform;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .marquee-track {
+    animation: none;
+  }
+}
