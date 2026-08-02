@@ -10,6 +10,16 @@ import {
 import { useI18n } from '../i18n'
 import { cn } from '../lib/cn'
 
+const NODES = ['LATHE-03', 'MILL-07', '5AX-01', 'GRIND-01', 'CMM-02', 'DOCK']
+
+/** The three live-data inputs, shaped for this component's label/title/body slots. */
+const STEPS = (t: { v2: { live: { items: Array<{ tag: string; body: string }> } } }) =>
+  t.v2.live.items.map((it, i) => ({
+    label: `0${i + 1}`,
+    title: it.tag,
+    body: it.body,
+  }))
+
 const NODE_POSITIONS: Array<[number, number]> = [
   [80, 70],
   [340, 130],
@@ -87,11 +97,17 @@ function ProcessGraph({
               fill={lit ? '#34D58A' : '#252B33'}
               className="transition-all duration-500"
             />
+            {/* The routing path runs behind some labels; stroking the text in
+                the section background knocks the line out from under it. */}
             <text
               x={x}
               y={y + 30}
               textAnchor="middle"
               fill={lit ? '#E8EBE7' : '#8A929B'}
+              stroke="#0E1115"
+              strokeWidth="5"
+              paintOrder="stroke"
+              strokeLinejoin="round"
               className="font-mono transition-all duration-500"
               style={{ fontSize: 11, letterSpacing: '0.1em' }}
             >
@@ -124,11 +140,11 @@ export function HowItWorks() {
 
   const header = (
     <>
-      <p className="font-mono uppercase tracking-widest text-[#8A929B] text-[12px]">
-        {t.how.eyebrow}
+      <p className="font-mono uppercase tracking-widest text-mono-gray text-[12px]">
+        {t.v2.nav.live}
       </p>
-      <h2 className="font-display text-[32px] md:text-[44px] font-bold tracking-tight text-[#E8EBE7] mt-4 leading-[1.12]">
-        {t.how.heading}
+      <h2 className="font-display text-[32px] md:text-[44px] font-bold tracking-tight text-[#E8EBE7] mt-4 leading-[1.12] text-balance">
+        {t.v2.live.heading}
       </h2>
     </>
   )
@@ -140,10 +156,10 @@ export function HowItWorks() {
         <div className="max-w-[1200px] mx-auto">
           {header}
           <div className="mt-12 flex justify-center">
-            <ProcessGraph labels={t.how.nodes} litCount={6} animated={false} />
+            <ProcessGraph labels={NODES} litCount={6} animated={false} />
           </div>
           <div className="mt-12 space-y-12 max-w-[560px]">
-            {t.how.steps.map((step, i) => (
+            {STEPS(t).map((step, i) => (
               <div key={i}>
                 <p className="font-mono text-[12px] tracking-[0.14em] text-[#34D58A]">
                   {step.label}
@@ -170,7 +186,7 @@ export function HowItWorks() {
           <div>
             {header}
             <div className="grid mt-12 min-h-[220px]">
-              {t.how.steps.map((step, i) => (
+              {STEPS(t).map((step, i) => (
                 <motion.div
                   key={i}
                   className="col-start-1 row-start-1"
@@ -212,7 +228,7 @@ export function HowItWorks() {
           {/* Right: process graph drawing itself */}
           <div className="flex justify-center">
             <ProcessGraph
-              labels={t.how.nodes}
+              labels={NODES}
               litCount={(active + 1) * 2}
               drawOffset={drawOffset}
               animated

@@ -2,6 +2,7 @@ import { motion, useReducedMotion } from 'motion/react'
 import { ChevronRight } from 'lucide-react'
 import { useI18n } from '../i18n'
 import { cn } from '../lib/cn'
+import { CONTACT_HREF } from '../lib/contact'
 
 // Abstract schedule motif for the hero background: machine rows with job bars,
 // one bar highlighted green. Widths/offsets in % of the row.
@@ -75,26 +76,35 @@ export function Hero() {
         <motion.div
           {...enter}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="z-20 flex-1 px-8 md:px-16 pt-12 md:pt-16 flex flex-col items-start max-md:pb-36"
+          className="z-20 flex-1 px-8 md:px-16 flex flex-col items-start justify-center max-md:pt-12 max-md:pb-36 md:pb-24"
         >
           <p className="font-mono text-[11px] tracking-[0.16em] text-[#27A567]">
-            {t.hero.kicker}
+            {t.v2.kicker}
           </p>
-          <h1 className="font-display text-[42px] md:text-[56px] font-bold tracking-tight text-[#E8EBE7] leading-[1.08] mt-5 max-w-[860px]">
-            {t.hero.headline1}
+          {/* Japanese sets denser and taller than Latin at the same size: the
+              display scale and leading step down so line 2 stays one line. */}
+          <h1
+            className={cn(
+              'font-display font-bold text-[#E8EBE7] mt-5',
+              lang === 'ja'
+                ? 'text-[32px] md:text-[46px] leading-[1.24] max-w-[900px]'
+                : 'text-[38px] md:text-[56px] tracking-tight leading-[1.08] max-w-[860px]',
+            )}
+          >
+            {t.v2.h1}
             <br />
-            <span className="text-[#34D58A]">{t.hero.headline2}</span>
+            <span className="text-[#34D58A]">{t.v2.h1accent}</span>
           </h1>
-          <p className="font-sans text-[14px] md:text-[15px] text-[#A7AFA9] mt-5 max-w-[520px] leading-relaxed">
-            {t.hero.sub}
+          <p className="font-sans text-[14px] md:text-[15px] text-[#A7AFA9] mt-5 max-w-[520px] leading-relaxed text-pretty">
+            {t.v2.sub}
           </p>
           <motion.a
-            href="mailto:hello@argus.app"
+            href={CONTACT_HREF}
             whileHover={reduced ? undefined : { scale: 1.04 }}
             whileTap={reduced ? undefined : { scale: 0.98 }}
             className="mt-8 inline-flex items-center gap-2 bg-[#27A567] text-[#06281A] rounded-full px-6 py-3 text-[13px] font-semibold"
           >
-            {t.hero.cta}
+            {t.v2.ctaPrimary}
             <ChevronRight size={15} aria-hidden="true" />
           </motion.a>
         </motion.div>
@@ -113,22 +123,22 @@ export function Hero() {
             ◉
           </span>
           <span className="font-display font-bold text-[13px] tracking-tight text-[#E8EBE7] pl-2.5 pr-1">
-            Argus
+            Soma
           </span>
           <a
             href="#pillars"
             className="hidden sm:block px-4 py-2 text-[12px] font-semibold text-slate-400 hover:text-white transition-colors whitespace-nowrap"
           >
-            {t.nav.product}
+            {t.v2.nav.product}
           </a>
           <a
             href="#how"
             className="hidden sm:block px-4 py-2 text-[12px] font-semibold text-slate-400 hover:text-white transition-colors whitespace-nowrap"
           >
-            {t.nav.how}
+            {t.v2.nav.live}
           </a>
           <div
-            className="font-mono text-[11px] text-slate-400 px-3 flex items-center gap-1.5"
+            className="font-mono text-[11px] text-slate-400 px-2 flex items-center gap-0.5"
             role="group"
             aria-label="Language"
           >
@@ -137,7 +147,7 @@ export function Hero() {
               onClick={() => setLang('en')}
               aria-pressed={lang === 'en'}
               className={cn(
-                'hover:text-white transition-colors',
+                'px-2 py-1.5 rounded-full hover:text-white transition-colors',
                 lang === 'en' && 'text-white',
               )}
             >
@@ -149,7 +159,7 @@ export function Hero() {
               onClick={() => setLang('ja')}
               aria-pressed={lang === 'ja'}
               className={cn(
-                'hover:text-white transition-colors whitespace-nowrap',
+                'px-2 py-1.5 rounded-full hover:text-white transition-colors whitespace-nowrap',
                 lang === 'ja' && 'text-white',
               )}
             >
@@ -158,9 +168,9 @@ export function Hero() {
           </div>
           <a
             href="#cta"
-            className="bg-[#151A20] px-5 py-2 rounded-full text-[12px] font-semibold text-[#34D58A] border border-slate-700/60 shadow-sm hover:border-[#27A567] transition-all flex items-center gap-1 whitespace-nowrap"
+            className="hidden sm:flex bg-[#151A20] px-5 py-2 rounded-full text-[12px] font-semibold text-[#34D58A] border border-slate-700/60 shadow-sm hover:border-[#27A567] transition-all items-center gap-1 whitespace-nowrap"
           >
-            {t.nav.demo}
+            {t.v2.nav.demo}
             <ChevronRight size={13} aria-hidden="true" />
           </a>
         </motion.nav>

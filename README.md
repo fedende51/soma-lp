@@ -1,8 +1,12 @@
-# Argus — Landing Page
+# Soma — Landing Page
 
-Single-page bilingual (EN/JA) marketing site for Argus, a production intelligence
-platform for manufacturers. React + TypeScript + Tailwind CSS v4 + Motion, built
-with Vite and deployable as a static site to GitHub Pages.
+Single-page bilingual (EN/JA) marketing site for Soma, production scheduling for
+high-mix machine shops. React + TypeScript + Tailwind CSS v4 + Motion, built with
+Vite and deployable as a static site to GitHub Pages.
+
+Copy source of truth: the Soma Scheduler brochure (v2) and BRD in the Manganese
+project. Register is plain, declarative and benefit-first — no narrative
+flourishes. Sections: Hero → Product → How it works → Team → CTA.
 
 ## Develop
 
@@ -26,5 +30,5 @@ so it works on any Pages URL.
 
 ## Before launch
 
-- Replace `VIDEO_URL_PLACEHOLDER` in `src/components/Hero.tsx` with real
-  abstract factory-floor / production-line footage (mp4, muted, loopable).
+- Confirm the contact address in `src/lib/contact.ts` — `hello@soma.app` is a
+  placeholder standing in for the real Soma address, and every CTA points at it.

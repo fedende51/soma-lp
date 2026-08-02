@@ -1,16 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Barlow+Condensed:wght@400;500;600&family=Figtree:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+JP:wght@400;500;700;900&family=VT323&display=swap');
 @import 'tailwindcss';
 
 @theme {
   --font-sans: 'Archivo', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
   --font-display: 'Archivo', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
+  /* World B: a terminal bitmap face for the character-cell lattice. */
+  --font-cell: 'VT323', ui-monospace, monospace;
+  /* World C: condensed gothic, the lettering convention on a drafting sheet. */
+  --font-draft: 'Barlow Condensed', 'Noto Sans JP', sans-serif;
+  /* World D: soft geometric sans for the pale-wash SaaS register. */
+  --font-soft: 'Figtree', 'Noto Sans JP', ui-sans-serif, system-ui, sans-serif;
 
   --color-graphite: #0e1115;
   --color-graphite-2: #151a20;
   --color-paper: #f6f7f4;
   --color-ink: #15181c;
   --color-ink-soft: #4a5158;
+  /* Muted ink for eyebrows on paper. --color-mono-gray only clears 3:1 there,
+     so it stays reserved for graphite surfaces. */
+  --color-ink-muted: #656d75;
   --color-line: #dde0da;
   --color-line-dark: #252b33;
   --color-run: #27a567;
@@ -19,8 +28,11 @@
   --color-mono-gray: #8a929b;
 }
 
+/* Deliberately not `scroll-behavior: smooth`: Chrome applies it to wheel input as
+   well as programmatic scrolls, which makes the page feel laggy under the hand.
+   Smooth motion is opted into per-call (rail arrows) instead. */
 html {
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
 }
 
 body {
@@ -35,26 +47,18 @@ body {
   outline-offset: 2px;
 }
 
-/* Large index numerals: transparent fill, 1px stroke */
-.outline-numeral {
-  -webkit-text-stroke: 1px var(--color-mono-gray);
-  color: transparent;
+/* Tight tracking is a Latin nicety; on CJK it collapses the glyph gutters.
+   Japanese wraps at almost any character, which strands fragments like 一/つ
+   across lines — auto-phrase breaks at phrase boundaries instead. */
+html[lang='ja'] :is(h1, h2, h3) {
+  letter-spacing: normal;
+  line-break: strict;
+  word-break: auto-phrase;
 }
 
-/* Capability marquee — pure CSS loop, pauses on hover */
-@keyframes marquee {
-  to {
-    transform: translateX(-50%);
-  }
-}
-
-.marquee-track {
-  animation: marquee 38s linear infinite;
-  will-change: transform;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
+/* Latin-only devices that damage CJK. */
+html[lang='ja'] .u-latin-tight {
+  letter-spacing: normal;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -62,7 +66,9 @@ body {
     scroll-behavior: auto;
   }
 
-  .marquee-track {
-    animation: none;
+  /* Every world's authored moment resolves to its finished state. */
+  .u-authored {
+    animation: none !important;
+    transition: none !important;
   }
 }

@@ -10,107 +10,142 @@ import {
 
 export type Lang = 'en' | 'ja'
 
-export interface StatementSegment {
-  text: string
-  accent?: boolean
-}
-
+/**
+ * Copy is design-agnostic on purpose: the visual worlds render these same strings.
+ * Voice is set by brochure-content.md v2 — plain, declarative, benefit-first.
+ *
+ * `v2` is the shipping copy for every candidate, version 0 included, so the versions
+ * differ in design and not in words. It names the category in the first line (APS),
+ * leads for the owner and then goes deep for the operation manager, and explains the
+ * live-data mechanism concretely instead of asserting it.
+ */
 const en = {
-  nav: {
-    product: 'Product',
-    how: 'How it works',
-    demo: 'Start a pilot',
+  v2: {
+    nav: {
+      product: 'Product',
+      live: 'Live data',
+      pilot: 'Pilot',
+      demo: 'Book a demo',
+    },
+    kicker: 'Digitize your factory floor',
+    h1: 'Advanced planning & scheduling',
+    h1accent: 'for high-mix machine shops.',
+    sub: 'Soma schedules every order across every machine against real capacity, including shifts, holidays, setups and maintenance. Cameras and IoT sensors report what each machine actually started and finished, so the schedule on screen matches the floor without anyone typing it in.',
+    ctaPrimary: 'Book a demo',
+    ctaSecondary: 'See how it works',
+    status:
+      'In development with a 39-person shop in Japan machining semiconductor equipment components.',
+
+    shot: {
+      alt: 'The Soma scheduling board: machine rows grouped by turning, milling and drilling, with an auto-schedule proposal across three orders.',
+      caption:
+        'Auto-scheduling three orders: 35 operations placed across the shop, each order checked against its due date before the plan is applied.',
+    },
+
+    outcomes: {
+      heading: 'What it changes',
+      items: [
+        {
+          title: 'Get more out of the machines you already own',
+          body: 'A precise schedule keeps spindles cutting instead of waiting. Similar setups run back to back, and every machine is loaded to its real limit rather than to a guess.',
+        },
+        {
+          title: 'Quote dates you can keep',
+          body: 'Every order is scheduled against real capacity, so the completion date you see is one the floor can actually hit.',
+        },
+        {
+          title: 'Know where every job is',
+          body: 'Machine status comes from the machines themselves, not from a clipboard collected at the end of the shift.',
+        },
+      ],
+    },
+
+    analytics: {
+      heading: 'Planned against actual',
+      lede: 'Every schedule and every machine report is kept, so the two can be compared over time.',
+      items: [
+        {
+          tag: 'Where the estimate was wrong',
+          body: 'Cycle and setup times drift from what the routing says. Soma shows which parts and which machines run long, so the next quote uses measured numbers instead of the original estimate.',
+        },
+        {
+          tag: 'Where the queue builds',
+          body: 'Planned start against actual start, across weeks, shows which machine work consistently waits in front of. That is your bottleneck, measured rather than argued about.',
+        },
+        {
+          tag: 'Where the capacity went',
+          body: 'Cutting, setup, waiting and downtime separated per machine, so a decision to add a shift or buy a machine rests on a record.',
+        },
+      ],
+      close:
+        'The schedule is the plan and the record at the same time, so there is nothing extra to collect.',
+    },
+
+    team: {
+      heading: 'Meet the team',
+      lede: 'Product and engineering people who have shipped manufacturing and automation systems.',
+    },
+
+    testimonial: {
+      label: 'Placeholder',
+      quote:
+        '[Placeholder. Customer quote to be supplied by Nippo KK and approved before launch.]',
+      name: 'Nippo KK',
+      role: 'Precision CNC machining, Japan',
+      note: 'Not a real quote. This block is a layout placeholder and must be replaced or removed before the site goes live.',
+    },
+
+    live: {
+      heading: 'How the live data works',
+      lede: 'Three ways in, depending on what the machine can do.',
+      items: [
+        {
+          tag: 'Connected machines',
+          body: 'Machines whose controls can already report their state send it straight to Soma. Nothing to mount, nothing to wire.',
+        },
+        {
+          tag: 'Cameras',
+          body: 'A camera pointed at the status lamp and the control screen reads what an operator reads: running, stopped, in setup, in alarm.',
+        },
+        {
+          tag: 'IoT sensors',
+          body: 'For older machines with neither, a sensor on the spindle or the power line detects when metal is actually being cut.',
+        },
+      ],
+      close:
+        'All three arrive in the same place. The block on the schedule turns from planned to actual, and anything downstream re-plans against it.',
+    },
+
+    capabilities: {
+      heading: 'For the person running the board',
+      items: [
+        {
+          tag: 'Scheduling',
+          title: 'Place one order, or the whole backlog.',
+          body: 'Drag an order onto a machine, or let Soma place everything at once. Step sequence and machine capability are checked as each operation lands.',
+        },
+        {
+          tag: 'Change management',
+          title: 'See what a change costs before it commits.',
+          body: 'Move one order and everything downstream re-plans. The full impact is shown for approval first, and any change can be undone.',
+        },
+        {
+          tag: 'Library and record',
+          title: 'Record a part once. The schedule keeps the rest.',
+          body: 'Steps, capable machines, setup and cycle times, inspections and outsourced operations are stored per part and reused by every future order. The schedule doubles as the history: scroll back to any past day and see what ran, on which machine, for which order.',
+        },
+      ],
+    },
+
+    pilot: {
+      heading: 'See it on your own jobs.',
+      body: 'Send your machine list and a week of orders. We build the board from your data and walk you through it: scheduling, a change, and where your capacity is actually going.',
+      cta: 'Book a demo',
+    },
   },
-  hero: {
-    kicker: 'ARGUS — CALCULATED PRODUCTION FOR HIGH-MIX MANUFACTURERS',
-    headline1: 'Deliver every order on time —',
-    headline2: 'and know it before you promise.',
-    sub: 'Argus combines live floor tracking, a schedule that recalculates itself, and the analytics to quote delivery dates you can keep.',
-    cta: 'Start a pilot',
-  },
-  marquee: [
-    'LIVE FLOOR MODEL',
-    'SETUP-AWARE SEQUENCING',
-    'DELIVERY RISK FLAGGED EARLY',
-    'BOTTLENECK DETECTION',
-    'SCENARIO PLANNING',
-    '日本語 / ENGLISH',
-  ],
-  statement: {
-    splitBy: 'word' as 'word' | 'char',
-    segments: [
-      {
-        text: 'Every machine. Every job. Every queue. One live model — and when reality disagrees with the plan, ',
-      },
-      { text: 'the plan updates.', accent: true },
-    ] as StatementSegment[],
-    captionPre:
-      'ARGUS — in the old story, the watchman with a hundred eyes who never slept. On your floor: ',
-    captionBold: 'every machine seen, all the time.',
-  },
-  how: {
-    eyebrow: 'How Argus works',
-    heading: 'The schedule follows the floor.',
-    nodes: ['LATHE-03', 'MILL-07', '5AX-01', 'GRIND-01', 'CMM-02', 'DOCK'],
-    steps: [
-      {
-        label: '01 — SEE',
-        title: 'A live model of your floor',
-        body: "Networked machines feed data directly. Cameras and IoT sensors cover the ones that don't. Every machine state, every active job, every queue — in one place.",
-      },
-      {
-        label: '02 — RECALCULATE',
-        title: 'A schedule that updates itself',
-        body: 'As actual times come in, the schedule recalculates. Orders at risk of missing their due date are flagged early, with the cause — not discovered at the end of the week.',
-      },
-      {
-        label: '03 — DECIDE',
-        title: 'Decisions with the impact calculated',
-        body: "Resequence, reassign, reprioritize. The downstream effect of each change is calculated before you commit — so a rush order doesn't quietly cost you three others.",
-      },
-    ],
-  },
-  pillars: {
-    eyebrow: 'What Argus does',
-    heading: 'Four capabilities. One live model.',
-    cards: [
-      {
-        tag: 'PRODUCTION SCHEDULING',
-        title: 'A schedule the floor can actually follow.',
-        bullets: [
-          'Setup time scheduled as part of every job — not hidden between bars',
-          'Similar setups sequenced back-to-back, so machines spend more time producing',
-        ],
-      },
-      {
-        tag: 'FLOOR TRACKING',
-        title: 'Every machine. Networked or not.',
-        bullets: [
-          'Direct machine data where connectivity exists',
-          'Cameras and IoT sensors cover the machines that have none',
-        ],
-      },
-      {
-        tag: 'DELIVERY ANALYTICS',
-        title: 'See risk weeks before the due date.',
-        bullets: [
-          'Every order tracked against its date as the floor changes',
-          'Lead times calculated from actuals, not estimates',
-        ],
-      },
-      {
-        tag: 'SCENARIO PLANNING',
-        title: 'Test the change before you make it.',
-        bullets: [
-          'A new machine, a second shift, a different product mix',
-          'Projections calibrated against your own production data',
-        ],
-      },
-    ],
-  },
+
+  /** The people. Shared by every version's team block. */
   team: {
-    eyebrow: 'About us',
-    heading: 'The team behind Argus.',
     members: [
       {
         name: 'Steven L.',
@@ -126,13 +161,7 @@ const en = {
       },
     ],
   },
-  cta: {
-    heading: 'See Argus on your own jobs.',
-    body: "Send us a week of orders and your machine list. We'll walk you through a live schedule built from your actual floor — and show you where the capacity is hiding.",
-    button: 'Start a pilot',
-  },
   footer: {
-    tagline: 'Calculated production for high-mix manufacturers.',
     contact: 'Contact',
   },
 }
@@ -140,101 +169,128 @@ const en = {
 export type Strings = typeof en
 
 const ja: Strings = {
-  nav: {
-    product: 'プロダクト',
-    how: '仕組み',
-    demo: 'パイロット導入',
+  v2: {
+    nav: {
+      product: '製品',
+      live: '実績データ',
+      pilot: '導入',
+      demo: 'デモを依頼',
+    },
+    kicker: '製造現場をデジタル化する',
+    h1: '多品種少量の機械加工現場のための',
+    h1accent: '生産スケジューラ。',
+    sub: 'Somaは、シフト・休日・段取り・メンテナンスを織り込んだ実際の能力に対して、すべてのオーダーをすべての機械に割り付けます。各機械が実際にいつ着手し、いつ終えたかはカメラとIoTセンサーが報告するため、画面上の計画と現場が、誰も入力しないままで一致します。',
+    ctaPrimary: 'デモを依頼する',
+    ctaSecondary: '仕組みを見る',
+    status: '半導体装置部品を加工する従業員39名の工場と共同開発中。',
+
+    shot: {
+      alt: 'Somaのスケジューリング画面。旋盤・フライス・穴あけごとに機械行が並び、3件のオーダーの自動スケジュール案が表示されている。',
+      caption:
+        '3件のオーダーを自動スケジューリング。35工程を現場全体に配置し、確定前に各オーダーを納期と照合します。',
+    },
+
+    outcomes: {
+      heading: '何が変わるか',
+      items: [
+        {
+          title: '今ある機械から、もっと引き出せる',
+          body: '精度の高い計画は、主軸を待たせずに削らせます。似た段取りを連続させ、勘ではなく実際の限界まで機械を積みます。',
+        },
+        {
+          title: '守れる納期を回答できる',
+          body: '実際の能力に対して割り付けるため、画面に出る完了予定は現場がそのまま達成できる日付になります。',
+        },
+        {
+          title: 'どのジョブがどこにあるか分かる',
+          body: '機械の状態は機械自身から届きます。終業後に紙を集めて回る必要がありません。',
+        },
+      ],
+    },
+
+    analytics: {
+      heading: '計画と実績を突き合わせる',
+      lede: 'すべての計画と機械からの報告を蓄積するため、両者を時系列で比較できます。',
+      items: [
+        {
+          tag: '見積もりのずれが分かる',
+          body: '加工時間や段取り時間は工程情報からずれていきます。どの部品・どの機械が長引くかを提示するので、次回の見積もりは当初の想定ではなく実測値を使えます。',
+        },
+        {
+          tag: '滞留している場所が分かる',
+          body: '計画上の開始時刻と実際の開始時刻を数週間分並べると、どの機械の手前で仕掛かりが待ち続けているかが見えます。これが、議論ではなく実測で特定したボトルネックです。',
+        },
+        {
+          tag: '能力の使われ方が分かる',
+          body: '切削・段取り・待ち・停止を機械ごとに切り分けます。交代制の追加や設備投資の判断を、記録に基づいて下せます。',
+        },
+      ],
+      close: 'スケジュールがそのまま計画であり記録でもあるため、別途集める手間はありません。',
+    },
+
+    team: {
+      heading: 'チーム紹介',
+      lede: '製造・自動化領域のシステムを実際に世に出してきたプロダクトとエンジニアリングのメンバーです。',
+    },
+
+    testimonial: {
+      label: 'プレースホルダー',
+      quote: '［プレースホルダー。Nippo KK様より頂戴し、公開前に承認を得たうえで差し替えます。］',
+      name: 'Nippo KK',
+      role: '精密切削加工・日本',
+      note: '実際のコメントではありません。このブロックはレイアウト確認用であり、公開前に差し替えるか削除する必要があります。',
+    },
+
+    live: {
+      heading: '実績データの取り込み方',
+      lede: '機械の対応状況に応じて、三つの経路があります。',
+      items: [
+        {
+          tag: 'ネットワーク対応機',
+          body: '状態を出力できる制御装置を持つ機械は、そのままSomaへ送信します。取り付けも配線も不要です。',
+        },
+        {
+          tag: 'カメラ',
+          body: '積層信号灯と制御画面にカメラを向けると、稼働・停止・段取り・アラームを、作業者が読むのと同じように読み取ります。',
+        },
+        {
+          tag: 'IoTセンサー',
+          body: 'どちらも持たない旧型機は、主軸や電源線に付けたセンサーが、実際に切削しているかどうかを検知します。',
+        },
+      ],
+      close:
+        '三つとも行き先は同じです。スケジュール上のブロックが計画から実績に変わり、後工程はそれに合わせて再計画されます。',
+    },
+
+    capabilities: {
+      heading: 'ボードを預かる人のために',
+      items: [
+        {
+          tag: 'スケジューリング',
+          title: '1件でも、バックログ全体でも。',
+          body: 'オーダーを機械にドラッグするか、Somaにまとめて任せます。工程順と機械の対応可否は、各工程を置いた時点で照合されます。',
+        },
+        {
+          tag: '変更管理',
+          title: '変更の代償は、確定する前に見える。',
+          body: 'オーダーを一つ動かせば後工程がまとめて再計画されます。影響をすべて提示したうえで承認でき、どの操作も取り消せます。',
+        },
+        {
+          tag: 'ライブラリと記録',
+          title: '部品は一度登録すれば、あとはスケジュールが覚えている。',
+          body: '工程、対応機械、段取り・加工時間、検査、外注工程を部品ごとに保存し、以降のすべてのオーダーで再利用します。スケジュールはそのまま履歴にもなり、過去のどの日に何を・どの機械で・どのオーダーのために流したかを遡って確認できます。',
+        },
+      ],
+    },
+
+    pilot: {
+      heading: '御社のジョブで確かめてください。',
+      body: '機械リストと1週間分のオーダーをお送りください。そのデータでボードを構築し、スケジューリング、変更への対応、生産能力の使われ方までご案内します。',
+      cta: 'デモを依頼する',
+    },
   },
-  hero: {
-    kicker: 'ARGUS — 多品種少量の現場のための、計算された生産',
-    headline1: 'すべてのオーダーを納期どおりに —',
-    headline2: '約束する前に、それが分かる。',
-    sub: 'Argusは、ライブフロアトラッキング、自動で再計算されるスケジュール、そして守れる納期回答のためのアナリティクスを一つにします。',
-    cta: 'パイロット導入を始める',
-  },
-  marquee: [
-    'ライブフロアモデル',
-    '段取りを考慮した順序付け',
-    '納期リスクの早期検知',
-    'ボトルネック検知',
-    'シナリオプランニング',
-    '日本語 / ENGLISH',
-  ],
-  statement: {
-    splitBy: 'char',
-    segments: [
-      {
-        text: 'すべての機械。すべてのジョブ。すべての待ち行列。一つのライブモデル — 現実が計画とずれたとき、',
-      },
-      { text: '更新されるのは計画のほう。', accent: true },
-    ],
-    captionPre:
-      'ARGUS — 神話に登場する、百の目を持ち決して眠らない番人。あなたの現場では：',
-    captionBold: 'すべての機械が、常に見えている。',
-  },
-  how: {
-    eyebrow: 'Argusの仕組み',
-    heading: 'スケジュールが、現場に追従する。',
-    nodes: ['LATHE-03', 'MILL-07', '5AX-01', 'GRIND-01', 'CMM-02', 'DOCK'],
-    steps: [
-      {
-        label: '01 — 見る',
-        title: '現場のライブモデル',
-        body: 'ネットワーク対応機はデータを直接送信。非対応機はカメラとIoTセンサーでカバーします。すべての機械状態・ジョブ・待ち行列を一箇所で把握できます。',
-      },
-      {
-        label: '02 — 再計算',
-        title: '自動で更新されるスケジュール',
-        body: '実績時間が入るたびにスケジュールが再計算され、納期遅延リスクのあるオーダーが原因とともに早期に表示されます。週末になって初めて気づく、ということがなくなります。',
-      },
-      {
-        label: '03 — 決める',
-        title: '影響を計算した上での意思決定',
-        body: '並べ替え、機械の再割り当て、優先度変更。確定する前に下流への影響が計算されるので、特急対応が他の3件を静かに遅らせる、という事態を防げます。',
-      },
-    ],
-  },
-  pillars: {
-    eyebrow: 'Argusの機能',
-    heading: '四つの機能。一つのライブモデル。',
-    cards: [
-      {
-        tag: '生産スケジューリング',
-        title: '現場が実際に守れるスケジュール。',
-        bullets: [
-          '段取り時間をすべてのジョブの一部としてスケジュールに組み込み',
-          '似た段取りを連続させ、機械の稼働時間を最大化',
-        ],
-      },
-      {
-        tag: 'フロアトラッキング',
-        title: 'すべての機械を。接続の有無を問わず。',
-        bullets: [
-          'ネットワーク対応機からは直接データを取得',
-          '非対応機はカメラとIoTセンサーでカバー',
-        ],
-      },
-      {
-        tag: '納期アナリティクス',
-        title: '納期の数週間前に、リスクが見える。',
-        bullets: [
-          '現場の変化に合わせて、すべてのオーダーを納期に対して追跡',
-          'リードタイムは見積もりではなく実績から算出',
-        ],
-      },
-      {
-        tag: 'シナリオプランニング',
-        title: '変更は、実行する前に検証。',
-        bullets: [
-          '機械の追加、二交代制、製品ミックスの変更',
-          '自社の生産データで校正された予測',
-        ],
-      },
-    ],
-  },
+
   team: {
-    eyebrow: 'チーム',
-    heading: 'Argusのチーム',
     members: [
       {
         name: 'Steven L.',
@@ -250,13 +306,7 @@ const ja: Strings = {
       },
     ],
   },
-  cta: {
-    heading: '御社のジョブで、Argusを。',
-    body: '1週間分のオーダーと機械リストをお送りください。御社の現場データから構築したライブスケジュールをお見せし、どこに生産能力が眠っているかをご説明します。',
-    button: 'パイロット導入を始める',
-  },
   footer: {
-    tagline: '多品種少量の現場のための、計算された生産',
     contact: 'お問い合わせ',
   },
 }
