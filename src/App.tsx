@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { I18nProvider } from './i18n'
 import { VersionSwitcher } from './VersionSwitcher'
+import { ComingSoon } from './coming-soon/ComingSoon'
 import { readVersion, type VersionId } from './versions/registry'
 import { Page as CurrentPage } from './versions/current/Page'
 import { Page as ConsolePage } from './versions/console/Page'
@@ -23,7 +24,16 @@ const PAGES: Record<VersionId, React.ComponentType> = {
   'studio-split': () => <StudioPage palette="split" />,
 }
 
+// Temporary: the root shows a holding page until a landing version is chosen.
+// Reviewers can still open any candidate with `?v=<id>`.
+const SHOW_COMING_SOON =
+  typeof window !== 'undefined' && !new URLSearchParams(window.location.search).has('v')
+
 export default function App() {
+  return SHOW_COMING_SOON ? <ComingSoon /> : <Versions />
+}
+
+function Versions() {
   const [version, setVersion] = useState<VersionId>(readVersion)
 
   // Keep the URL shareable so a specific version can be sent to someone.
