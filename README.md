@@ -10,19 +10,20 @@
 
 <p align="center">
   <a href="#features">Features</a> &middot;
-  <a href="#site-preview">Site Preview</a> &middot;
+  <a href="#live-site">Live Site</a> &middot;
   <a href="#quick-start">Quick Start</a> &middot;
+  <a href="#deployment">Deployment</a> &middot;
   <a href="#source-map">Source Map</a> &middot;
   <a href="#project-reference">Project Reference</a>
 </p>
 
 ---
 
-## Site Preview
+## Live Site
 
-[Open the SOMA site preview](https://www.renderpopstudio.com/soma).
+**[fedende51.github.io/soma-lp](https://fedende51.github.io/soma-lp/)** — public, published from `main` by GitHub Pages.
 
-Contact the project owner for the private access password.
+A password-protected preview is also hosted at [renderpopstudio.com/soma](https://www.renderpopstudio.com/soma); contact the project owner for its access password.
 
 ## Overview
 
@@ -43,7 +44,7 @@ The product sequences are illustrative. The website introduces Scheduler; it doe
 
 ## Quick Start
 
-Run from the `website` checkout, with Node.js and npm installed:
+Run from the repository root, with Node.js and npm installed:
 
 ```powershell
 npm run dev
@@ -57,7 +58,13 @@ For the optional build, media, and validation tools, install the declared depend
 npm install
 ```
 
-Deploy the contents of `dist/` to a static host. There is no required application bundling step for the existing website. The optional PHP password-screen integration is described in [hosting/php/README.md](hosting/php/README.md); its private configuration is not part of the static source.
+## Deployment
+
+Every push to `main` publishes the site. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) uploads `dist/` exactly as committed to GitHub Pages; there is no build step, so what you see on the local server is what goes live. A deploy can also be started by hand from the repository's **Actions** tab (**Deploy to GitHub Pages → Run workflow**).
+
+The site is served from the `/soma-lp/` subpath, so keep links and asset references in `dist/` relative (`assets/logo.png`, not `/assets/logo.png`).
+
+`dist/` is plain static files and can be copied to any other static host. The optional PHP password screen used for the RenderPop Studio preview is described in [hosting/php/README.md](hosting/php/README.md); it is not used on GitHub Pages, and its private configuration is not part of this repository.
 
 ## Source Map
 
@@ -70,6 +77,7 @@ Deploy the contents of `dist/` to a static host. There is no required applicatio
 | `video/` | Launch-film composition, rendering, and audio workflow |
 | `scheduler-launch/` | Additional launch-film source and its own workflow notes |
 | `hosting/php/` | Optional password-screen source and integration instructions |
+| `.github/workflows/deploy.yml` | Publishes `dist/` to GitHub Pages on every push to `main` |
 | `DESIGN.md`, `MOTION.md`, `ASSETS.md` | Design direction, motion behavior, and asset provenance |
 
 The primary branch is `main`. `dist/` contains maintained source and required browser assets; retain it in the repository. Third-party design-reference clones and local deployment artifacts are not site source.
@@ -97,7 +105,7 @@ $env:SOMA_PREVIEW_PASSWORD = '<preview password supplied by the owner>'
 
 Clear it after use with `Remove-Item Env:SOMA_PREVIEW_PASSWORD`. Password values, `config.php`, FTP profiles, runtime state and generated delivery packages stay outside Git.
 
-`scripts/deploy-renderpop.py` publishes a locally prepared PHP delivery over verified FTPS using the existing RenderPop Studio FileZilla entry. It stages and checks every website file before activation, preserves the host's password configuration and runtime, and retains a rollback copy outside the public folder. Hosting credentials are read from the local profile and are not included in this repository.
+`scripts/deploy-renderpop.py` publishes a locally prepared PHP delivery to the RenderPop Studio preview (separate from the GitHub Pages site) over verified FTPS using the existing RenderPop Studio FileZilla entry. It stages and checks every website file before activation, preserves the host's password configuration and runtime, and retains a rollback copy outside the public folder. Hosting credentials are read from the local profile and are not included in this repository.
 
 ## Assets and Credits
 
