@@ -1,0 +1,22 @@
+{
+  "originals": [
+    "logo_soma_light.png",
+    "logo_soma_dark.png"
+  ],
+  "originalRingPixelsIdentical": true,
+  "crop": [
+    320,
+    213,
+    1080,
+    973
+  ],
+  "pivot": [
+    700,
+    593
+  ],
+  "outerSeconds": 24,
+  "innerSeconds": 30,
+  "updatesPerSecond": 8,
+  "sourceSha256": "5bab88e5e7329981f94765a26e64d365a230f39ed7a113f2cc91095dddf6cc34",
+  "scriptBytes": 26212
+}

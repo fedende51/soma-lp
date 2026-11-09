@@ -1,0 +1,74 @@
+{
+  "duration": 32,
+  "bpm": 93.75,
+  "cues": [
+    {
+      "time": 3.55,
+      "type": "click"
+    },
+    {
+      "time": 10.9,
+      "type": "click"
+    },
+    {
+      "time": 16.85,
+      "type": "click"
+    },
+    {
+      "time": 22.8,
+      "type": "click"
+    }
+  ],
+  "scenes": [
+    {
+      "start": 0,
+      "end": 2.3,
+      "title": "Production never  stands still. "
+    },
+    {
+      "start": 2.56,
+      "end": 4.88,
+      "title": "A deadline  moves. "
+    },
+    {
+      "start": 5.12,
+      "end": 7.43,
+      "title": "Every step.  Connected. "
+    },
+    {
+      "start": 7.68,
+      "end": 10,
+      "title": "Meet  SOMA. "
+    },
+    {
+      "start": 10.24,
+      "end": 15.06,
+      "title": "One move.  A clearer next step. "
+    },
+    {
+      "start": 15.36,
+      "end": 17.6,
+      "title": "Review  the ripple. "
+    },
+    {
+      "start": 17.92,
+      "end": 20.15,
+      "title": "You keep  control. "
+    },
+    {
+      "start": 20.48,
+      "end": 22.7,
+      "title": "Knowledge,  kept. "
+    },
+    {
+      "start": 23.04,
+      "end": 25.25,
+      "title": "Next order.  A head start. "
+    },
+    {
+      "start": 28.16,
+      "end": 33,
+      "title": "Your production.  A clear plan. "
+    }
+  ]
+}

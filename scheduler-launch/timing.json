@@ -1,0 +1,204 @@
+{
+  "duration": 30,
+  "fps": 60,
+  "bpm": 120,
+  "beat_seconds": 0.5,
+  "beats": [
+    0.0,
+    0.5,
+    1.0,
+    1.5,
+    2.0,
+    2.5,
+    3.0,
+    3.5,
+    4.0,
+    4.5,
+    5.0,
+    5.5,
+    6.0,
+    6.5,
+    7.0,
+    7.5,
+    8.0,
+    8.5,
+    9.0,
+    9.5,
+    10.0,
+    10.5,
+    11.0,
+    11.5,
+    12.0,
+    12.5,
+    13.0,
+    13.5,
+    14.0,
+    14.5,
+    15.0,
+    15.5,
+    16.0,
+    16.5,
+    17.0,
+    17.5,
+    18.0,
+    18.5,
+    19.0,
+    19.5,
+    20.0,
+    20.5,
+    21.0,
+    21.5,
+    22.0,
+    22.5,
+    23.0,
+    23.5,
+    24.0,
+    24.5,
+    25.0,
+    25.5,
+    26.0,
+    26.5,
+    27.0,
+    27.5,
+    28.0,
+    28.5,
+    29.0,
+    29.5
+  ],
+  "drop": 8,
+  "voice": [],
+  "scenes": [
+    {
+      "index": 0,
+      "start": 0,
+      "end": 3,
+      "title": "Plans change."
+    },
+    {
+      "index": 1,
+      "start": 3,
+      "end": 6,
+      "title": "Make room."
+    },
+    {
+      "index": 2,
+      "start": 6,
+      "end": 9,
+      "title": "See the whole route."
+    },
+    {
+      "index": 3,
+      "start": 9,
+      "end": 12,
+      "title": "Move one step."
+    },
+    {
+      "index": 4,
+      "start": 12,
+      "end": 15,
+      "title": "See what follows."
+    },
+    {
+      "index": 5,
+      "start": 15,
+      "end": 18,
+      "title": "Review. Then commit."
+    },
+    {
+      "index": 6,
+      "start": 18,
+      "end": 21,
+      "title": "Your plan. Your call."
+    },
+    {
+      "index": 7,
+      "start": 21,
+      "end": 24,
+      "title": "Keep the know-how."
+    },
+    {
+      "index": 8,
+      "start": 24,
+      "end": 27,
+      "title": "Start from what you know."
+    },
+    {
+      "index": 9,
+      "start": 27,
+      "end": 30,
+      "title": "Make room for change."
+    }
+  ],
+  "actions": [
+    {
+      "name": "unfold",
+      "seconds": 3,
+      "frame": 180
+    },
+    {
+      "name": "route",
+      "seconds": 6,
+      "frame": 360
+    },
+    {
+      "name": "reveal",
+      "seconds": 8,
+      "frame": 480
+    },
+    {
+      "name": "press",
+      "seconds": 9.5,
+      "frame": 570
+    },
+    {
+      "name": "release",
+      "seconds": 11,
+      "frame": 660
+    },
+    {
+      "name": "proposal",
+      "seconds": 12,
+      "frame": 720
+    },
+    {
+      "name": "review",
+      "seconds": 15,
+      "frame": 900
+    },
+    {
+      "name": "apply",
+      "seconds": 17,
+      "frame": 1020
+    },
+    {
+      "name": "settle",
+      "seconds": 18,
+      "frame": 1080
+    },
+    {
+      "name": "library",
+      "seconds": 21,
+      "frame": 1260
+    },
+    {
+      "name": "new_order",
+      "seconds": 24,
+      "frame": 1440
+    },
+    {
+      "name": "create",
+      "seconds": 25.5,
+      "frame": 1530
+    },
+    {
+      "name": "brand",
+      "seconds": 27,
+      "frame": 1620
+    },
+    {
+      "name": "resolve",
+      "seconds": 28,
+      "frame": 1680
+    }
+  ]
+}

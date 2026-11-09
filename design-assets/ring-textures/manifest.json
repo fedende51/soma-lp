@@ -1,0 +1,32 @@
+{
+  "environment": {
+    "sourceBytes": 6312947,
+    "preparedBytes": 1615248,
+    "size": [
+      1024,
+      512
+    ]
+  },
+  "maps": [
+    {
+      "name": "bump",
+      "bytes": 824631,
+      "lossless": true
+    },
+    {
+      "name": "direction",
+      "bytes": 145573,
+      "lossless": true
+    },
+    {
+      "name": "roughness",
+      "bytes": 449483,
+      "lossless": true
+    },
+    {
+      "name": "stripes",
+      "bytes": 42128,
+      "lossless": true
+    }
+  ]
+}

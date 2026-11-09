@@ -1,0 +1,36 @@
+{
+  "format": "procedural JavaScript; generated in browser, no GLB download",
+  "mesh": {
+    "meshes": 6,
+    "triangles": 19562,
+    "vertices": 11801,
+    "uniqueGeometries": 6,
+    "geometryBytes": 340828,
+    "instanceBytes": 768
+  },
+  "renderedTriangles": 19562,
+  "drawCalls": 6,
+  "files": {
+    "visuals/precision-ring-3d.js": {
+      "bytes": 9769,
+      "gzipBytes": 3980,
+      "brotliBytes": 3502
+    },
+    "dist/assets/precision-ring-3d.js": {
+      "bytes": 577054,
+      "gzipBytes": 148110,
+      "brotliBytes": 121874
+    },
+    "dist/assets/precision-ring-lighting.webp": {
+      "bytes": 2293464,
+      "gzipBytes": 2293556,
+      "brotliBytes": 2293472
+    },
+    "dist/assets/ring-metal-worker.js": {
+      "bytes": 3371,
+      "gzipBytes": 1692,
+      "brotliBytes": 1511
+    }
+  },
+  "geometryMemoryNote": "Sum of unique position/normal/UV/index buffer bytes. Instance transforms are reported separately. Excludes textures, environment maps and renderer allocations."
+}

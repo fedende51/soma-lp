@@ -1,0 +1,21 @@
+{
+  "track": "Classical vibes 4",
+  "artist": "Grigoriy Nuzhny",
+  "tempoEstimate": 93.75,
+  "strongOnsets": [
+    5.36,
+    6.7,
+    9.95,
+    14.68,
+    15.47,
+    17.49,
+    20.84,
+    22.52,
+    24.3,
+    24.96,
+    28.38,
+    29.4
+  ],
+  "source": "https://assets.mixkit.co/music/684/684.mp3",
+  "sha256": "45f5275e91f05dfa5bd8b7451955596566ef02419570b8888dda2ef20a401515"
+}

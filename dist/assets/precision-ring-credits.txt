@@ -1,0 +1,15 @@
+SOMA precision ring - selected 3D version A
+
+The machined ring geometry and procedural metal textures are project-specific
+code reconstructed from the supplied illustration. They are not recovered CAD.
+The satin finish and central-axis rotation use option A. Wide screens retain
+its comparison camera; the phone camera follows the original static framing.
+Matching first-frame posters are rendered from this model for loading and
+fallback. These are code renders, not new AI images or edits of the old photo.
+
+Three.js 0.186.1, copyright 2010-2026 three.js authors, MIT licensed.
+The complete license is included in THREE-LICENSE.txt.
+
+Reflection environment: Studio Small 09 by Sergej Majboroda, Poly Haven, CC0.
+https://polyhaven.com/a/studio_small_09
+Downloaded at 2K from the official Poly Haven file API.

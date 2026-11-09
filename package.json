@@ -1,28 +1,29 @@
 {
-  "name": "argus-lp",
+  "name": "soma-website",
   "private": true,
-  "version": "0.0.1",
-  "type": "module",
+  "version": "1.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
+    "ring:build": "node scripts/build-ring.mjs",
+    "ring:posters": "node scripts/render-ring-posters.mjs",
+    "dev": "node scripts/serve.mjs",
+    "video:studio": "remotion studio video/index.jsx --public-dir=dist/assets --no-open",
+    "video:render": "node video/render-flow.mjs",
+    "check": "node scripts/check.mjs",
+    "video:draft": "node video/render-flow.mjs --draft",
+    "video:stills": "node video/render-flow.mjs --stills",
+    "video:remotion-legacy": "node video/render.mjs"
   },
   "dependencies": {
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.515.0",
-    "motion": "^12.16.0",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "tailwind-merge": "^3.3.0"
+    "@remotion/bundler": "4.0.536",
+    "@remotion/cli": "4.0.536",
+    "@remotion/renderer": "4.0.536",
+    "gsap": "3.15.0",
+    "react": "19.2.0",
+    "react-dom": "19.2.0",
+    "remotion": "4.0.536",
+    "three": "0.186.1"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.8",
-    "@types/react": "^19.1.6",
-    "@types/react-dom": "^19.1.6",
-    "@vitejs/plugin-react": "^4.5.1",
-    "tailwindcss": "^4.1.8",
-    "typescript": "~5.8.3",
-    "vite": "^6.3.5"
+    "axe-core": "4.14.0"
   }
 }

@@ -1,0 +1,16 @@
+footer{font-family:'IBM Plex Sans',Manrope,Arial,sans-serif;font-weight:500}
+footer>span.footer-tagline{font-size:13px;line-height:1.65;letter-spacing:0;white-space:nowrap;max-width:none}
+footer>.mono{font-family:'IBM Plex Sans',Manrope,Arial,sans-serif;font-weight:500;letter-spacing:.01em}
+.private-preview-note{background:#101719;color:#a8bcbe;padding:16px 20px;text-align:center;font:500 13px/1.5 'IBM Plex Sans',Manrope,Arial,sans-serif}
+
+/* The selected C font replaces the former typewriter labels everywhere. */
+.mono,.eyebrow,.section-label{font-family:var(--label-font);font-weight:500}
+.part-illustration text{font-family:var(--label-font);font-weight:500}
+@media(max-width:640px){
+ footer.wrap{grid-template-columns:minmax(0,1fr) max-content;gap:24px 16px;align-items:center}
+ footer.wrap>span.footer-tagline{grid-column:1;grid-row:1;text-align:left;white-space:normal;text-wrap:balance;max-width:270px;min-width:0;font-size:13px;line-height:1.5}
+ footer.wrap>a:last-child{grid-column:2;grid-row:1;justify-self:end;justify-content:flex-end;gap:6px;white-space:nowrap;min-height:44px;font-size:12px}
+ footer.wrap>a:last-child .icon{width:16px;height:16px}
+ footer.wrap>.brand{grid-column:1/-1;grid-row:2;justify-self:center}
+ footer.wrap>.mono{grid-column:1/-1;grid-row:3;text-align:center;justify-self:center}
+}

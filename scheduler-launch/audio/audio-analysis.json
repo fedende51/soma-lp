@@ -1,0 +1,1141 @@
+{
+  "title": "SOMA Scheduler \u2014 Make room for change",
+  "composer": "Original local composition generated for SOMA with this deterministic Python source",
+  "seed": 12020261017,
+  "duration_s": 30,
+  "bpm": 120,
+  "key": "D major, with B minor and G major colour; suspended A resolves to D",
+  "sources": {
+    "music": "Locally synthesized additive struck-string piano, harmonic bowed ensemble, acoustic-style pulses and brushes. No external samples or generated third-party music.",
+    "sfx": "Locally synthesized tactile modal clicks and filtered surface noise.",
+    "code": "E:\\Projects\\Soma\\website\\scheduler-launch\\audio\\compose.py",
+    "third_party_audio_assets": []
+  },
+  "arc": [
+    {
+      "start_s": 0,
+      "end_s": 3,
+      "description": "Intimate four-note piano motif; sparse felt pulse"
+    },
+    {
+      "start_s": 3,
+      "end_s": 6,
+      "description": "Warm ensemble enters under a melodic answer"
+    },
+    {
+      "start_s": 6,
+      "end_s": 9,
+      "description": "G major expansion; upper-register piano lift at 8 seconds"
+    },
+    {
+      "start_s": 9,
+      "end_s": 15,
+      "description": "Rhythmic direct manipulation passage; A suspended chord resolves"
+    },
+    {
+      "start_s": 15,
+      "end_s": 18,
+      "description": "Piano answer with restrained rhythm; apply click at 17"
+    },
+    {
+      "start_s": 18,
+      "end_s": 21,
+      "description": "Intimate low-register bridge; percussion falls away"
+    },
+    {
+      "start_s": 21,
+      "end_s": 24,
+      "description": "Recognizable opening motif returns"
+    },
+    {
+      "start_s": 24,
+      "end_s": 27,
+      "description": "Final rising phrase and fuller dominant chord"
+    },
+    {
+      "start_s": 27,
+      "end_s": 30,
+      "description": "Resolved D add9 chord, natural sustained tail and final fade"
+    }
+  ],
+  "outputs": {
+    "music_only": {
+      "path": "E:\\Projects\\Soma\\website\\scheduler-launch\\audio\\music-only.wav",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "duration_s": 30.0,
+      "sample_count": 1440000,
+      "encoding": "PCM signed 24-bit stereo WAV",
+      "integrated_lufs": -13.99,
+      "true_peak_dbtp": -1.65,
+      "loudness_range_lu": 4.5,
+      "sample_peak_dbfs": -1.6479992009292594,
+      "normalization_pass": {
+        "input_i": "-17.09",
+        "input_tp": "-2.52",
+        "input_lra": "7.10",
+        "input_thresh": "-27.22",
+        "output_i": "-13.95",
+        "output_tp": "-1.50",
+        "output_lra": "4.40",
+        "output_thresh": "-24.00",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.05"
+      },
+      "final_static_calibration_db": -0.15000000000000036,
+      "analysis_pass": {
+        "input_i": "-13.99",
+        "input_tp": "-1.65",
+        "input_lra": "4.50",
+        "input_thresh": "-24.07",
+        "output_i": "-13.83",
+        "output_tp": "-1.50",
+        "output_lra": "4.70",
+        "output_thresh": "-23.88",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.17"
+      },
+      "target_integrated_lufs": -14,
+      "target_true_peak_dbtp": -1.5,
+      "signal_sanity": {
+        "finite_samples": true,
+        "clipped_samples_at_full_scale": 0,
+        "last_sample_peak": 0.0,
+        "stereo_correlation": 0.9185816774390155,
+        "section_rms_dbfs": [
+          {
+            "start_s": 0,
+            "end_s": 3,
+            "rms_dbfs": -17.722339912273
+          },
+          {
+            "start_s": 3,
+            "end_s": 6,
+            "rms_dbfs": -15.435479814398889
+          },
+          {
+            "start_s": 6,
+            "end_s": 9,
+            "rms_dbfs": -14.728360029160207
+          },
+          {
+            "start_s": 9,
+            "end_s": 12,
+            "rms_dbfs": -17.04487806075604
+          },
+          {
+            "start_s": 12,
+            "end_s": 15,
+            "rms_dbfs": -15.672692488902191
+          },
+          {
+            "start_s": 15,
+            "end_s": 18,
+            "rms_dbfs": -18.31317971143396
+          },
+          {
+            "start_s": 18,
+            "end_s": 21,
+            "rms_dbfs": -21.755278253315616
+          },
+          {
+            "start_s": 21,
+            "end_s": 24,
+            "rms_dbfs": -16.337545410012638
+          },
+          {
+            "start_s": 24,
+            "end_s": 27,
+            "rms_dbfs": -14.531335679656882
+          },
+          {
+            "start_s": 27,
+            "end_s": 30,
+            "rms_dbfs": -15.379768604696569
+          }
+        ]
+      },
+      "aac_192k_codec_check": {
+        "integrated_lufs": -14.0,
+        "true_peak_dbtp": -1.65,
+        "passes_minus_1_dbtp": true,
+        "note": "Temporary AAC encode, decoded and measured with FFmpeg. Final picture mux must still be checked separately. Temporary file deleted after measurement."
+      }
+    },
+    "full_mix": {
+      "path": "E:\\Projects\\Soma\\website\\scheduler-launch\\audio\\full-mix.wav",
+      "sample_rate_hz": 48000,
+      "channels": 2,
+      "duration_s": 30.0,
+      "sample_count": 1440000,
+      "encoding": "PCM signed 24-bit stereo WAV",
+      "integrated_lufs": -13.99,
+      "true_peak_dbtp": -1.65,
+      "loudness_range_lu": 4.5,
+      "sample_peak_dbfs": -1.6490432394390162,
+      "normalization_pass": {
+        "input_i": "-17.09",
+        "input_tp": "-2.16",
+        "input_lra": "7.10",
+        "input_thresh": "-27.22",
+        "output_i": "-13.95",
+        "output_tp": "-1.50",
+        "output_lra": "4.50",
+        "output_thresh": "-23.99",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.05"
+      },
+      "final_static_calibration_db": -0.15000000000000036,
+      "analysis_pass": {
+        "input_i": "-13.99",
+        "input_tp": "-1.65",
+        "input_lra": "4.50",
+        "input_thresh": "-24.07",
+        "output_i": "-13.84",
+        "output_tp": "-1.50",
+        "output_lra": "4.70",
+        "output_thresh": "-23.88",
+        "normalization_type": "dynamic",
+        "target_offset": "-0.16"
+      },
+      "target_integrated_lufs": -14,
+      "target_true_peak_dbtp": -1.5,
+      "signal_sanity": {
+        "finite_samples": true,
+        "clipped_samples_at_full_scale": 0,
+        "last_sample_peak": 0.0,
+        "stereo_correlation": 0.9186563915611191,
+        "section_rms_dbfs": [
+          {
+            "start_s": 0,
+            "end_s": 3,
+            "rms_dbfs": -17.71269244558429
+          },
+          {
+            "start_s": 3,
+            "end_s": 6,
+            "rms_dbfs": -15.425613482095354
+          },
+          {
+            "start_s": 6,
+            "end_s": 9,
+            "rms_dbfs": -14.718344281883509
+          },
+          {
+            "start_s": 9,
+            "end_s": 12,
+            "rms_dbfs": -17.033779759316474
+          },
+          {
+            "start_s": 12,
+            "end_s": 15,
+            "rms_dbfs": -15.662818827301319
+          },
+          {
+            "start_s": 15,
+            "end_s": 18,
+            "rms_dbfs": -18.301987463437175
+          },
+          {
+            "start_s": 18,
+            "end_s": 21,
+            "rms_dbfs": -21.745228680659025
+          },
+          {
+            "start_s": 21,
+            "end_s": 24,
+            "rms_dbfs": -16.327373405542037
+          },
+          {
+            "start_s": 24,
+            "end_s": 27,
+            "rms_dbfs": -14.523387034443116
+          },
+          {
+            "start_s": 27,
+            "end_s": 30,
+            "rms_dbfs": -15.409510075226285
+          }
+        ]
+      },
+      "aac_192k_codec_check": {
+        "integrated_lufs": -14.0,
+        "true_peak_dbtp": -1.63,
+        "passes_minus_1_dbtp": true,
+        "note": "Temporary AAC encode, decoded and measured with FFmpeg. Final picture mux must still be checked separately. Temporary file deleted after measurement."
+      }
+    }
+  },
+  "beat_analysis": {
+    "method": "Scipy band-pass 35\u2013220 Hz, 2 ms centered power envelope; local peaks \u00b135 ms of expected acoustic pulses. Independent 1024-sample STFT flux at 5 ms hop with autocorrelation.",
+    "authored_bpm": 120,
+    "grid_period_s": 0.5,
+    "musical_pulse_events": 36,
+    "max_absolute_filtered_peak_deviation_ms": 13.062500000000199,
+    "median_absolute_filtered_peak_deviation_ms": 12.83333333333303,
+    "detected_pulse_peaks": [
+      {
+        "target_s": 0.0,
+        "detected_peak_s": 0.012770833333333334,
+        "deviation_ms": 12.770833333333334
+      },
+      {
+        "target_s": 2.0,
+        "detected_peak_s": 2.0128958333333333,
+        "deviation_ms": 12.895833333333329
+      },
+      {
+        "target_s": 3.0,
+        "detected_peak_s": 3.0128333333333335,
+        "deviation_ms": 12.833333333333474
+      },
+      {
+        "target_s": 4.0,
+        "detected_peak_s": 4.012791666666667,
+        "deviation_ms": 12.791666666666757
+      },
+      {
+        "target_s": 5.0,
+        "detected_peak_s": 5.0128125,
+        "deviation_ms": 12.812499999999893
+      },
+      {
+        "target_s": 6.0,
+        "detected_peak_s": 6.0129375,
+        "deviation_ms": 12.937499999999602
+      },
+      {
+        "target_s": 7.0,
+        "detected_peak_s": 7.01275,
+        "deviation_ms": 12.749999999999595
+      },
+      {
+        "target_s": 8.0,
+        "detected_peak_s": 8.012833333333333,
+        "deviation_ms": 12.83333333333303
+      },
+      {
+        "target_s": 9.0,
+        "detected_peak_s": 9.0130625,
+        "deviation_ms": 13.062500000000199
+      },
+      {
+        "target_s": 9.5,
+        "detected_peak_s": 9.512791666666667,
+        "deviation_ms": 12.791666666666757
+      },
+      {
+        "target_s": 10.0,
+        "detected_peak_s": 10.012854166666667,
+        "deviation_ms": 12.854166666667055
+      },
+      {
+        "target_s": 10.5,
+        "detected_peak_s": 10.512770833333333,
+        "deviation_ms": 12.770833333332732
+      },
+      {
+        "target_s": 11.0,
+        "detected_peak_s": 11.0126875,
+        "deviation_ms": 12.687500000000185
+      },
+      {
+        "target_s": 11.5,
+        "detected_peak_s": 11.5128125,
+        "deviation_ms": 12.812500000000782
+      },
+      {
+        "target_s": 12.0,
+        "detected_peak_s": 12.012895833333333,
+        "deviation_ms": 12.895833333333329
+      },
+      {
+        "target_s": 12.5,
+        "detected_peak_s": 12.512979166666666,
+        "deviation_ms": 12.979166666665876
+      },
+      {
+        "target_s": 13.0,
+        "detected_peak_s": 13.012791666666667,
+        "deviation_ms": 12.791666666666757
+      },
+      {
+        "target_s": 13.5,
+        "detected_peak_s": 13.51275,
+        "deviation_ms": 12.750000000000483
+      },
+      {
+        "target_s": 14.0,
+        "detected_peak_s": 14.012770833333333,
+        "deviation_ms": 12.770833333332732
+      },
+      {
+        "target_s": 14.5,
+        "detected_peak_s": 14.512833333333333,
+        "deviation_ms": 12.83333333333303
+      },
+      {
+        "target_s": 15.0,
+        "detected_peak_s": 15.012729166666666,
+        "deviation_ms": 12.729166666666458
+      },
+      {
+        "target_s": 15.5,
+        "detected_peak_s": 15.512916666666667,
+        "deviation_ms": 12.916666666667354
+      },
+      {
+        "target_s": 16.0,
+        "detected_peak_s": 16.012833333333333,
+        "deviation_ms": 12.83333333333303
+      },
+      {
+        "target_s": 16.5,
+        "detected_peak_s": 16.512895833333335,
+        "deviation_ms": 12.895833333335105
+      },
+      {
+        "target_s": 17.0,
+        "detected_peak_s": 17.012916666666666,
+        "deviation_ms": 12.916666666665577
+      },
+      {
+        "target_s": 17.5,
+        "detected_peak_s": 17.512916666666666,
+        "deviation_ms": 12.916666666665577
+      },
+      {
+        "target_s": 21.0,
+        "detected_peak_s": 21.0128125,
+        "deviation_ms": 12.812499999999005
+      },
+      {
+        "target_s": 22.0,
+        "detected_peak_s": 22.012916666666666,
+        "deviation_ms": 12.916666666665577
+      },
+      {
+        "target_s": 23.0,
+        "detected_peak_s": 23.012875,
+        "deviation_ms": 12.87500000000108
+      },
+      {
+        "target_s": 24.0,
+        "detected_peak_s": 24.012791666666665,
+        "deviation_ms": 12.79166666666498
+      },
+      {
+        "target_s": 24.5,
+        "detected_peak_s": 24.512875,
+        "deviation_ms": 12.87500000000108
+      },
+      {
+        "target_s": 25.0,
+        "detected_peak_s": 25.012854166666667,
+        "deviation_ms": 12.854166666667055
+      },
+      {
+        "target_s": 25.5,
+        "detected_peak_s": 25.512770833333335,
+        "deviation_ms": 12.770833333334508
+      },
+      {
+        "target_s": 26.0,
+        "detected_peak_s": 26.01275,
+        "deviation_ms": 12.750000000000483
+      },
+      {
+        "target_s": 26.5,
+        "detected_peak_s": 26.512895833333335,
+        "deviation_ms": 12.895833333335105
+      },
+      {
+        "target_s": 27.0,
+        "detected_peak_s": 27.0128125,
+        "deviation_ms": 12.812499999999005
+      }
+    ],
+    "tempo_autocorrelation_candidates": [
+      {
+        "bpm": 60,
+        "autocorrelation": 0.8784208370424749
+      },
+      {
+        "bpm": 80,
+        "autocorrelation": -0.014941323162067146
+      },
+      {
+        "bpm": 100,
+        "autocorrelation": -0.014731457571763142
+      },
+      {
+        "bpm": 120,
+        "autocorrelation": 0.529407981036215
+      },
+      {
+        "bpm": 140,
+        "autocorrelation": -0.014436885912780308
+      },
+      {
+        "bpm": 160,
+        "autocorrelation": -0.014611672538194075
+      },
+      {
+        "bpm": 180,
+        "autocorrelation": -0.014722858359043198
+      },
+      {
+        "bpm": 240,
+        "autocorrelation": -0.014696690791826452
+      }
+    ],
+    "caveat": "Band-pass group delay shifts acoustic energy peaks several milliseconds. Exact UI cue placement uses the individual unfiltered 1 ms energy peak, reported separately."
+  },
+  "sfx_cues": [
+    {
+      "kind": "press",
+      "target_s": 9.5,
+      "gain": 0.13,
+      "requested_peak_s": 9.5,
+      "measured_peak_s": 9.5,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.0041875,
+      "start_s": 9.4958125
+    },
+    {
+      "kind": "release",
+      "target_s": 11,
+      "gain": 0.105,
+      "requested_peak_s": 11,
+      "measured_peak_s": 11.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.002625,
+      "start_s": 10.997375
+    },
+    {
+      "kind": "proposal",
+      "target_s": 12,
+      "gain": 0.11,
+      "requested_peak_s": 12,
+      "measured_peak_s": 12.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.0010833333333333333,
+      "start_s": 11.998916666666666
+    },
+    {
+      "kind": "review",
+      "target_s": 15,
+      "gain": 0.11,
+      "requested_peak_s": 15,
+      "measured_peak_s": 15.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.0037708333333333335,
+      "start_s": 14.996229166666666
+    },
+    {
+      "kind": "apply",
+      "target_s": 17,
+      "gain": 0.155,
+      "requested_peak_s": 17,
+      "measured_peak_s": 17.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.0049791666666666665,
+      "start_s": 16.995020833333335
+    },
+    {
+      "kind": "route",
+      "target_s": 21,
+      "gain": 0.1,
+      "requested_peak_s": 21,
+      "measured_peak_s": 21.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.004375,
+      "start_s": 20.995625
+    },
+    {
+      "kind": "create",
+      "target_s": 25.5,
+      "gain": 0.16,
+      "requested_peak_s": 25.5,
+      "measured_peak_s": 25.5,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.0031041666666666665,
+      "start_s": 25.496895833333333
+    },
+    {
+      "kind": "logo",
+      "target_s": 27,
+      "gain": 0.16,
+      "requested_peak_s": 27,
+      "measured_peak_s": 27.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.002958333333333333,
+      "start_s": 26.997041666666668
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 3,
+      "gain": 0.095,
+      "requested_peak_s": 3,
+      "measured_peak_s": 3.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.246125,
+      "start_s": 2.753875
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 6,
+      "gain": 0.095,
+      "requested_peak_s": 6,
+      "measured_peak_s": 6.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.238375,
+      "start_s": 5.761625
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 15,
+      "gain": 0.095,
+      "requested_peak_s": 15,
+      "measured_peak_s": 15.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.21825,
+      "start_s": 14.78175
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 21,
+      "gain": 0.095,
+      "requested_peak_s": 21,
+      "measured_peak_s": 21.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.23354166666666668,
+      "start_s": 20.766458333333333
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 24,
+      "gain": 0.095,
+      "requested_peak_s": 24,
+      "measured_peak_s": 24.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.21866666666666668,
+      "start_s": 23.781333333333333
+    },
+    {
+      "kind": "soft_surface",
+      "target_s": 27,
+      "gain": 0.095,
+      "requested_peak_s": 27,
+      "measured_peak_s": 27.0,
+      "deviation_ms": 0.0,
+      "source_peak_s": 0.21933333333333332,
+      "start_s": 26.780666666666665
+    }
+  ],
+  "max_sfx_peak_alignment_deviation_ms": 0.0,
+  "composition_notes": [
+    {
+      "time_s": 0,
+      "midi": 50,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 0.0
+    },
+    {
+      "time_s": 3,
+      "midi": 47,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 3.0
+    },
+    {
+      "time_s": 6,
+      "midi": 43,
+      "velocity": 0.68,
+      "duration_s": 3.1,
+      "onset_peak_s": 6.0
+    },
+    {
+      "time_s": 9,
+      "midi": 42,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 9.0
+    },
+    {
+      "time_s": 12,
+      "midi": 45,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 12.0
+    },
+    {
+      "time_s": 15,
+      "midi": 47,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 15.0
+    },
+    {
+      "time_s": 18,
+      "midi": 43,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 18.0
+    },
+    {
+      "time_s": 21,
+      "midi": 50,
+      "velocity": 0.5,
+      "duration_s": 3.1,
+      "onset_peak_s": 21.0
+    },
+    {
+      "time_s": 24,
+      "midi": 45,
+      "velocity": 0.68,
+      "duration_s": 3.1,
+      "onset_peak_s": 24.0
+    },
+    {
+      "time_s": 27,
+      "midi": 38,
+      "velocity": 0.68,
+      "duration_s": 3.1,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 0,
+      "midi": 66,
+      "velocity": 0.72,
+      "duration_s": 2.6,
+      "onset_peak_s": 0.0
+    },
+    {
+      "time_s": 1,
+      "midi": 69,
+      "velocity": 0.57,
+      "duration_s": 2.1,
+      "onset_peak_s": 1.0
+    },
+    {
+      "time_s": 2,
+      "midi": 64,
+      "velocity": 0.5,
+      "duration_s": 1.7,
+      "onset_peak_s": 2.0
+    },
+    {
+      "time_s": 2.5,
+      "midi": 62,
+      "velocity": 0.45,
+      "duration_s": 2,
+      "onset_peak_s": 2.5
+    },
+    {
+      "time_s": 3.5,
+      "midi": 66,
+      "velocity": 0.56,
+      "duration_s": 2.6,
+      "onset_peak_s": 3.5
+    },
+    {
+      "time_s": 5,
+      "midi": 69,
+      "velocity": 0.51,
+      "duration_s": 2.2,
+      "onset_peak_s": 5.0
+    },
+    {
+      "time_s": 6,
+      "midi": 71,
+      "velocity": 0.62,
+      "duration_s": 2.6,
+      "onset_peak_s": 6.0
+    },
+    {
+      "time_s": 7,
+      "midi": 69,
+      "velocity": 0.53,
+      "duration_s": 1.8,
+      "onset_peak_s": 7.0
+    },
+    {
+      "time_s": 8,
+      "midi": 74,
+      "velocity": 0.85,
+      "duration_s": 3.4,
+      "onset_peak_s": 8.0
+    },
+    {
+      "time_s": 8.5,
+      "midi": 73,
+      "velocity": 0.52,
+      "duration_s": 1.8,
+      "onset_peak_s": 8.5
+    },
+    {
+      "time_s": 9,
+      "midi": 69,
+      "velocity": 0.59,
+      "duration_s": 2.5,
+      "onset_peak_s": 9.0
+    },
+    {
+      "time_s": 10.5,
+      "midi": 66,
+      "velocity": 0.52,
+      "duration_s": 2,
+      "onset_peak_s": 10.5
+    },
+    {
+      "time_s": 11.5,
+      "midi": 64,
+      "velocity": 0.43,
+      "duration_s": 2.3,
+      "onset_peak_s": 11.5
+    },
+    {
+      "time_s": 12,
+      "midi": 62,
+      "velocity": 0.61,
+      "duration_s": 2.6,
+      "onset_peak_s": 12.0
+    },
+    {
+      "time_s": 13,
+      "midi": 64,
+      "velocity": 0.56,
+      "duration_s": 2.2,
+      "onset_peak_s": 13.0
+    },
+    {
+      "time_s": 14,
+      "midi": 69,
+      "velocity": 0.69,
+      "duration_s": 2.5,
+      "onset_peak_s": 14.0
+    },
+    {
+      "time_s": 15,
+      "midi": 66,
+      "velocity": 0.64,
+      "duration_s": 2.8,
+      "onset_peak_s": 15.0
+    },
+    {
+      "time_s": 16.5,
+      "midi": 62,
+      "velocity": 0.46,
+      "duration_s": 2.1,
+      "onset_peak_s": 16.5
+    },
+    {
+      "time_s": 17.5,
+      "midi": 61,
+      "velocity": 0.36,
+      "duration_s": 1.4,
+      "onset_peak_s": 17.5
+    },
+    {
+      "time_s": 18,
+      "midi": 59,
+      "velocity": 0.53,
+      "duration_s": 3.0,
+      "onset_peak_s": 18.0
+    },
+    {
+      "time_s": 20,
+      "midi": 62,
+      "velocity": 0.43,
+      "duration_s": 2.3,
+      "onset_peak_s": 20.0
+    },
+    {
+      "time_s": 21,
+      "midi": 66,
+      "velocity": 0.75,
+      "duration_s": 2.5,
+      "onset_peak_s": 21.0
+    },
+    {
+      "time_s": 22,
+      "midi": 69,
+      "velocity": 0.64,
+      "duration_s": 2.3,
+      "onset_peak_s": 22.0
+    },
+    {
+      "time_s": 23,
+      "midi": 64,
+      "velocity": 0.55,
+      "duration_s": 1.8,
+      "onset_peak_s": 23.0
+    },
+    {
+      "time_s": 23.5,
+      "midi": 62,
+      "velocity": 0.5,
+      "duration_s": 1.7,
+      "onset_peak_s": 23.5
+    },
+    {
+      "time_s": 24,
+      "midi": 69,
+      "velocity": 0.73,
+      "duration_s": 2.5,
+      "onset_peak_s": 24.0
+    },
+    {
+      "time_s": 25,
+      "midi": 73,
+      "velocity": 0.76,
+      "duration_s": 2.5,
+      "onset_peak_s": 25.0
+    },
+    {
+      "time_s": 26,
+      "midi": 76,
+      "velocity": 0.82,
+      "duration_s": 2.3,
+      "onset_peak_s": 26.0
+    },
+    {
+      "time_s": 26.5,
+      "midi": 73,
+      "velocity": 0.51,
+      "duration_s": 1.6,
+      "onset_peak_s": 26.5
+    },
+    {
+      "time_s": 27,
+      "midi": 74,
+      "velocity": 0.82,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 3,
+      "midi": 54,
+      "velocity": 0.29,
+      "duration_s": 3.0,
+      "onset_peak_s": 3.0
+    },
+    {
+      "time_s": 3,
+      "midi": 62,
+      "velocity": 0.29,
+      "duration_s": 3.0,
+      "onset_peak_s": 3.0
+    },
+    {
+      "time_s": 6,
+      "midi": 55,
+      "velocity": 0.38,
+      "duration_s": 3.0,
+      "onset_peak_s": 6.0
+    },
+    {
+      "time_s": 6,
+      "midi": 62,
+      "velocity": 0.38,
+      "duration_s": 3.0,
+      "onset_peak_s": 6.0
+    },
+    {
+      "time_s": 6,
+      "midi": 67,
+      "velocity": 0.38,
+      "duration_s": 3.0,
+      "onset_peak_s": 6.0
+    },
+    {
+      "time_s": 8,
+      "midi": 59,
+      "velocity": 0.46,
+      "duration_s": 3.0,
+      "onset_peak_s": 8.0
+    },
+    {
+      "time_s": 8,
+      "midi": 66,
+      "velocity": 0.46,
+      "duration_s": 3.0,
+      "onset_peak_s": 8.0
+    },
+    {
+      "time_s": 8,
+      "midi": 69,
+      "velocity": 0.46,
+      "duration_s": 3.0,
+      "onset_peak_s": 8.0
+    },
+    {
+      "time_s": 9,
+      "midi": 57,
+      "velocity": 0.28,
+      "duration_s": 3.0,
+      "onset_peak_s": 9.0
+    },
+    {
+      "time_s": 9,
+      "midi": 62,
+      "velocity": 0.28,
+      "duration_s": 3.0,
+      "onset_peak_s": 9.0
+    },
+    {
+      "time_s": 12,
+      "midi": 57,
+      "velocity": 0.34,
+      "duration_s": 3.0,
+      "onset_peak_s": 12.0
+    },
+    {
+      "time_s": 12,
+      "midi": 64,
+      "velocity": 0.34,
+      "duration_s": 3.0,
+      "onset_peak_s": 12.0
+    },
+    {
+      "time_s": 14,
+      "midi": 57,
+      "velocity": 0.3,
+      "duration_s": 3.0,
+      "onset_peak_s": 14.0
+    },
+    {
+      "time_s": 14,
+      "midi": 61,
+      "velocity": 0.3,
+      "duration_s": 3.0,
+      "onset_peak_s": 14.0
+    },
+    {
+      "time_s": 14,
+      "midi": 64,
+      "velocity": 0.3,
+      "duration_s": 3.0,
+      "onset_peak_s": 14.0
+    },
+    {
+      "time_s": 15,
+      "midi": 54,
+      "velocity": 0.3,
+      "duration_s": 3.0,
+      "onset_peak_s": 15.0
+    },
+    {
+      "time_s": 15,
+      "midi": 62,
+      "velocity": 0.3,
+      "duration_s": 3.0,
+      "onset_peak_s": 15.0
+    },
+    {
+      "time_s": 18,
+      "midi": 55,
+      "velocity": 0.23,
+      "duration_s": 3.0,
+      "onset_peak_s": 18.0
+    },
+    {
+      "time_s": 18,
+      "midi": 62,
+      "velocity": 0.23,
+      "duration_s": 3.0,
+      "onset_peak_s": 18.0
+    },
+    {
+      "time_s": 21,
+      "midi": 57,
+      "velocity": 0.29,
+      "duration_s": 3.0,
+      "onset_peak_s": 21.0
+    },
+    {
+      "time_s": 21,
+      "midi": 62,
+      "velocity": 0.29,
+      "duration_s": 3.0,
+      "onset_peak_s": 21.0
+    },
+    {
+      "time_s": 24,
+      "midi": 57,
+      "velocity": 0.38,
+      "duration_s": 3.0,
+      "onset_peak_s": 24.0
+    },
+    {
+      "time_s": 24,
+      "midi": 64,
+      "velocity": 0.38,
+      "duration_s": 3.0,
+      "onset_peak_s": 24.0
+    },
+    {
+      "time_s": 26,
+      "midi": 57,
+      "velocity": 0.42,
+      "duration_s": 3.0,
+      "onset_peak_s": 26.0
+    },
+    {
+      "time_s": 26,
+      "midi": 61,
+      "velocity": 0.42,
+      "duration_s": 3.0,
+      "onset_peak_s": 26.0
+    },
+    {
+      "time_s": 26,
+      "midi": 69,
+      "velocity": 0.42,
+      "duration_s": 3.0,
+      "onset_peak_s": 26.0
+    },
+    {
+      "time_s": 27,
+      "midi": 50,
+      "velocity": 0.48,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 27,
+      "midi": 57,
+      "velocity": 0.48,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 27,
+      "midi": 62,
+      "velocity": 0.48,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 27,
+      "midi": 66,
+      "velocity": 0.48,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    },
+    {
+      "time_s": 27,
+      "midi": 69,
+      "velocity": 0.48,
+      "duration_s": 3.0,
+      "onset_peak_s": 27.0
+    }
+  ],
+  "verification": {
+    "measurement_only": true,
+    "listening_performed": false,
+    "limitations": "No critical listening session was available. Measured loudness, true peak, durations and alignment do not establish perceived timbre, speaker balance, or picture synchronization. Parent film should mux these exact files and review against rendered actions."
+  }
+}

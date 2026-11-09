@@ -1,0 +1,4 @@
+import React from 'react';
+import {registerRoot,Composition,Folder} from 'remotion';
+import {Film,Opening,Reveal,Plan,Change,Knowledge,Closing} from './scenes';
+registerRoot(()=> <><Composition id="SomaLaunch" component={Film} durationInFrames={1080} fps={30} width={1920} height={1080}/><Folder name="Scenes"><Composition id="Opening" component={Opening} durationInFrames={165} fps={30} width={1920} height={1080}/><Composition id="Reveal" component={Reveal} durationInFrames={150} fps={30} width={1920} height={1080}/><Composition id="Plan" component={Plan} durationInFrames={240} fps={30} width={1920} height={1080}/><Composition id="Change" component={Change} durationInFrames={180} fps={30} width={1920} height={1080}/><Composition id="Knowledge" component={Knowledge} durationInFrames={180} fps={30} width={1920} height={1080}/><Composition id="Closing" component={Closing} durationInFrames={165} fps={30} width={1920} height={1080}/></Folder></>);

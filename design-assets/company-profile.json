@@ -1,0 +1,45 @@
+{
+  "source": "Owner-provided company facts and scheduler_brd.md; proposed mission and vision for review.",
+  "confirmed": {
+    "english_name": "SOMA Co., Ltd.",
+    "japanese_name": "株式会社SOMA",
+    "founders_count": 3,
+    "founder_areas": [
+      "business",
+      "product",
+      "technology"
+    ],
+    "contact": "paolino.luis@gmail.com",
+    "customer_display_name": "Nippo K.K.",
+    "company_model": "Fully AI-agentic company",
+    "founders": [
+      {
+        "name": "Steven Lim",
+        "role": "CEO",
+        "title": "Chief Executive Officer"
+      },
+      {
+        "name": "Federico Martinolich",
+        "role": "CPO",
+        "title": "Chief Product Officer"
+      },
+      {
+        "name": "Luis Paolino",
+        "role": "CTO",
+        "title": "Chief Technology Officer"
+      }
+    ]
+  },
+  "awaiting_owner": {
+    "establishment_date": null,
+    "city_prefecture_and_address": null,
+    "customer_logo_and_website": null
+  },
+  "notes": [
+    "No customer logo, testimonial, customer outcome or office address invented.",
+    "The establishment row is hidden until its date is confirmed.",
+    "Location FAQ links to contact until location is confirmed.",
+    "Company About page is separate from the product homepage.",
+    "Company operating model is AI-agentic. Scheduler capability claims still follow the product BRD."
+  ]
+}

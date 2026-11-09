@@ -1,0 +1,48 @@
+{
+  "modelSourceSha256": "4898fd6c8b657a74619162dfbea46d69cb514dd7eb5dc4098d2719d9affee298",
+  "phase": 0,
+  "generated": [
+    {
+      "file": "dist/assets/ring-poster-phone-600.webp",
+      "width": 600,
+      "height": 548,
+      "framing": "phone",
+      "bytes": 40260
+    },
+    {
+      "file": "dist/assets/ring-poster-phone-800.webp",
+      "width": 800,
+      "height": 731,
+      "framing": "phone",
+      "bytes": 56270
+    },
+    {
+      "file": "dist/assets/ring-poster-phone-1100.webp",
+      "width": 1100,
+      "height": 1005,
+      "framing": "phone",
+      "bytes": 84200
+    },
+    {
+      "file": "dist/assets/ring-poster-wide-600.webp",
+      "width": 600,
+      "height": 548,
+      "framing": "wide",
+      "bytes": 40260
+    },
+    {
+      "file": "dist/assets/ring-poster-wide-800.webp",
+      "width": 800,
+      "height": 731,
+      "framing": "wide",
+      "bytes": 56270
+    },
+    {
+      "file": "dist/assets/ring-poster-wide-1100.webp",
+      "width": 1100,
+      "height": 1005,
+      "framing": "wide",
+      "bytes": 84200
+    }
+  ]
+}

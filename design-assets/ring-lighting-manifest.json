@@ -1,0 +1,15 @@
+{
+  "source": "precision-ring-studio-original.hdr",
+  "sourceBytes": 6312947,
+  "packedBytes": 2293464,
+  "originalDimensions": [
+    2048,
+    1024
+  ],
+  "packedDimensions": [
+    4096,
+    1024
+  ],
+  "originalRGBESha256": "daafcfba252dcd451498fb11cb3e4d801150fbe875f585851856e69e47746849",
+  "lossless": true
+}

@@ -1,0 +1,35 @@
+{
+  "title": "SOMA Scheduler — Make room for change",
+  "duration_seconds": 30,
+  "fps": 60,
+  "formats": [
+    "1920×1080",
+    "1080×1920"
+  ],
+  "exports": [
+    {
+      "path": "deliver/scheduler-launch-landscape.mp4",
+      "sha256": "abd8b2e740e409fda6717a959b5814109c5172da93a0cf41767c32af4a235c5e",
+      "bytes": 4968782
+    },
+    {
+      "path": "deliver/scheduler-launch-landscape-music-only.mp4",
+      "sha256": "55844831d2ef0f4eba2833445ad77d9599c677e95e5ca7d4d7eb886d11b2e099",
+      "bytes": 4970008
+    },
+    {
+      "path": "deliver/scheduler-launch-portrait.mp4",
+      "sha256": "c3cbe6770fb01c13fb12b6a6716a27fae2d9dfffc7d306407c83a0bf33aaaa04",
+      "bytes": 4093317
+    },
+    {
+      "path": "deliver/scheduler-launch-portrait-music-only.mp4",
+      "sha256": "8559b7b3d04e086328758771a7e53871f29ddddc690e67fcb1f0944675ad451a",
+      "bytes": 4094543
+    }
+  ],
+  "source": "index.html + film.js + timing.json + assets/ + audio/compose.py",
+  "facts": "facts.json",
+  "review": "qa/final-critic.md",
+  "human_check": "Listen on speakers/headphones; confirm current product visual fidelity and public CTA/domain before publishing."
+}

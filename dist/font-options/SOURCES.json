@@ -1,0 +1,20 @@
+[
+  {
+    "family": "Space Grotesk",
+    "file": "space-grotesk.woff2",
+    "bytes": 13312,
+    "cssSource": "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap",
+    "fontSource": "https://fonts.gstatic.com/s/spacegrotesk/v22/V8mQoQDjQSkFtoMM3T6r8E7mF71Q-gOoraIAEj7aUXskPMA.woff2",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/spacegrotesk/OFL.txt",
+    "sha256": "1b1a8131d9edf975d9decee81e2f2bf504812f7a4f498e5500f28a613e22e64c"
+  },
+  {
+    "family": "IBM Plex Sans",
+    "file": "ibm-plex-sans.woff2",
+    "bytes": 24184,
+    "cssSource": "https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&display=swap",
+    "fontSource": "https://fonts.gstatic.com/s/ibmplexsans/v23/zYXGKVElMYYaJe8bpLHnCwDKr932-G7dytD-Dmu1swZSAXcomDVmadSD2FlDB6g4.woff2",
+    "licenseSource": "https://raw.githubusercontent.com/google/fonts/main/ofl/ibmplexsans/OFL.txt",
+    "sha256": "0717336fb31fcdcde4b8deb3675bb4a0f7f6d484864afcd6751ac29975962203"
+  }
+]

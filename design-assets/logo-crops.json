@@ -1,0 +1,44 @@
+{
+  "light": {
+    "source": "logo_soma_light.png",
+    "sha256": "5bab88e5e7329981f94765a26e64d365a230f39ed7a113f2cc91095dddf6cc34",
+    "wordmark_viewbox": [
+      104,
+      1022,
+      1193,
+      147
+    ],
+    "rings_viewbox": [
+      330,
+      228,
+      742,
+      730
+    ],
+    "ring_center": [
+      700,
+      593
+    ],
+    "split_radius": 320
+  },
+  "dark": {
+    "source": "logo_soma_dark.png",
+    "sha256": "a17a1c9e25d25b471646ded8079b2d92df6b66f65f6b2e3e2100be5035a934ff",
+    "wordmark_viewbox": [
+      104,
+      1022,
+      1193,
+      147
+    ],
+    "rings_viewbox": [
+      330,
+      228,
+      742,
+      730
+    ],
+    "ring_center": [
+      700,
+      593
+    ],
+    "split_radius": 320
+  }
+}

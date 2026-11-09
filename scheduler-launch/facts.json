@@ -1,0 +1,248 @@
+{
+  "source": "Arch/scheduler_brd.md",
+  "claims": [
+    {
+      "id": "change",
+      "on_screen": "Plans change. / Make room. / Make room for change.",
+      "source_sentence": "1. **Change management first.** The whiteboard's real job is absorbing disruption. Rescheduling must be faster and safer than erasing a whiteboard, or the tool gets abandoned.",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L21",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 21,
+      "note": "P1 manual planning, positioning statement"
+    },
+    {
+      "id": "board",
+      "on_screen": "See the whole route.",
+      "source_sentence": "| P0 | E4-1 | As an **Operation Manager**, I want a timeline with one row per machine, grouped by section (turning, milling, drilling, inspection, finishing), so that the board mirrors the physical shop layout. | • Machine rows grouped under section headers; machine name, type, and an \"automated\" badge where applicable in a sticky left column that survives horizontal scroll<br>• Calendar header shows weeks, days, and hours appropriate to zoom |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L105",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 105,
+      "note": "Machine timeline; grouped lanes"
+    },
+    {
+      "id": "route",
+      "on_screen": "Route connectors / Turning / Milling / CMM inspection",
+      "source_sentence": "| P0 | E4-6 | As an **Operation Manager**, I want connector lines drawn between an order's blocks when it is highlighted, so that its path across machines reads as one flow even on a board full of machines and orders. | • When an order is selected or hovered (E4-4), a connector line links its blocks in routing sequence — from the end of each step's block to the start of the next step's block, across machine rows<br>• Lines render in the order's color, above dimmed blocks but never obscuring block labels; they disappear when the highlight clears<br>• Split steps (E5-3) connect both parallel blocks from and to the adjacent steps, and if both then feed the same next-step machine, they converge to a single arrow onward<br>• A step chained across a day boundary on the SAME machine (too long for one shift window) reads as one leg — exactly one arrow in and out, not one per day-chunk (fixed 2026-07-19; previously fanned out a duplicate arrow per chunk)<br>• Lines follow the blocks live during pan/zoom and while dragging (E5-5) |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L110",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 110,
+      "note": "Selected-order routing connectors; the inspection in this example is a machine CMM process, not an automatic manual inspection"
+    },
+    {
+      "id": "drag",
+      "on_screen": "Move one step.",
+      "source_sentence": "| P0 | E5-5 | As an **Operation Manager**, I want to drag a scheduled block in time or to another compatible machine, so that reacting to change is direct manipulation, not form editing. | • ~~Dragging is locked by default; clicking a placed block arms that block for dragging (visible ring), so a stray drag can never reschedule work~~ — **the arming click is REMOVED** (customer request, 2026-08-16: *\"drag and drop would be a better experience than click and place\"*; with E4-3). It existed because a stray drag silently rescheduling work was frightening. It no longer is: a drop that displaces other work opens the E6-1 impact preview rather than committing, an ordinary drop lands with an undo toast, and the drag now snaps to legal anchors. Moving a block is the most frequent action on this board and it was costing two gestures<br>• Blocks drag horizontally (retiming) and vertically to compatible machine rows (reassignment)<br>• **Magnetic snapping**: the drag pulls onto the nearest MEANINGFUL position when the pointer is close — the earliest this block could legally start on that machine, the end of another block on it, or the end of its own previous step. Away from an anchor the drag stays free at quarter-hour granularity, deliberately: the customer asked that it *\"always snap to the earliest time available\"*, but making that the only outcome would remove the planner's ability to hold Tuesday for a rush order they know is coming. Earliest-available is offered as an anchor and belongs as an explicit command, not as a law<br>• Whatever the result, it resolves FORWARD into working time — a block may span a weekend, but may never start in one<br>• Setup segment moves with its block; drops onto incompatible machines or downtime are rejected visually<br>• Drop commits immediately with an undo toast (E6-5); if other work is affected, the impact preview intervenes first (E6-1) |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L123",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 123,
+      "note": "Direct human drag, valid time/compatible machine"
+    },
+    {
+      "id": "impact",
+      "on_screen": "See what follows. / Proposed moves / Before / After",
+      "source_sentence": "| P0 | E6-1 | As an **Operation Manager**, I want a change to one block to automatically recompute everything it affects — with a preview of consequences before commit — so that fixing one thing never silently breaks three others. | • Triggers: moving/resizing/deleting a block, changing order quantity or step times, adding downtime over scheduled work<br>• The system recomputes dependent steps of the same order and displaced work of other orders (pushed later within shift rules)<br>• Impact preview lists every affected order: old vs. new completion and deadline delta, color-coded (earlier / unchanged / now late)<br>• Confirm applies the whole cascade atomically; cancel restores the previous state exactly |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L134",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 134,
+      "note": "Dependent and displaced work preview"
+    },
+    {
+      "id": "review",
+      "on_screen": "Review. Then commit. / Apply changes / Changes applied",
+      "source_sentence": "| P0 | E6-1 | As an **Operation Manager**, I want a change to one block to automatically recompute everything it affects — with a preview of consequences before commit — so that fixing one thing never silently breaks three others. | • Triggers: moving/resizing/deleting a block, changing order quantity or step times, adding downtime over scheduled work<br>• The system recomputes dependent steps of the same order and displaced work of other orders (pushed later within shift rules)<br>• Impact preview lists every affected order: old vs. new completion and deadline delta, color-coded (earlier / unchanged / now late)<br>• Confirm applies the whole cascade atomically; cancel restores the previous state exactly |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L134",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 134,
+      "note": "Planner must confirm cascade"
+    },
+    {
+      "id": "pin",
+      "on_screen": "Pinned work stays put. / Pinned / Fixed commitment",
+      "source_sentence": "| P0 | E6-2 | As an **Operation Manager**, I want to pin an order so rescheduling plans around it, so that commitments to customers stay fixed. | • Orders can be pinned/unpinned; pinned blocks show a pin marker<br>• Ripple reschedules and auto-scheduling treat pinned blocks as immovable and plan around them<br>• A change impossible without moving a pinned block is rejected with an explanation naming the pin |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L135",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 135,
+      "note": "Immovable pinned work"
+    },
+    {
+      "id": "control",
+      "on_screen": "Your plan. Your call. / Draft",
+      "source_sentence": "| P1 | E9-5 | As an **Operation Manager**, I want to experiment with the schedule without disturbing the one the shop is working to, so that a new order arriving doesn't force me to edit the live plan to find out what it costs. | • Customer request, 2026-08-15: *\"there is no way to mess around and experiment with the schedule. Updating the main schedule whenever a new order comes in can really screw up the existing.\"*<br>• The board you edit is always the **draft**. The header states which you are looking at and IS the publish control: **Draft — click to publish** when the draft has moved past the last published version, **Published** when it hasn't<br>• **Publishing is one click and takes no name** (customer request, 2026-08-15: \"user shouldn't have to add a name\") — the publish timestamp is the version's name. A naming dialog stood between the planner and the one action that makes a draft safe, and a label answered under mild duress is worse than a timestamp<br>• **Every publish creates a new version**; nothing is ever overwritten, so the changelog is a complete record<br>• **Changelog** (File ▸ Changelog…, or click the header when published) lists published versions newest first with their timestamp and order/block counts, marking the current one<br>• **Reverting/restoring is deliberately NOT offered yet** (customer decision, 2026-08-15: \"let's not allow to revert for now\") — replacing a live plan with an old one is consequential and the customer wants to consider it separately. Versions are full snapshots and the apply path is built and tested, so nothing here forecloses it<br>• Versions are stored locally alongside the snapshot (IndexedDB); the draft records which version it came from, so \"unpublished changes?\" survives a reload. That question is answered by COMPARING draft to version, never by a dirty flag — a flag is only as good as the mutation path that remembers to set it, and the one that forgot would claim \"Published\" over unpublished work<br>• **Deliberately NOT in P1:** the shop floor seeing published-only. Nothing outside this app reads the plan yet (P2-2 live tracking is where that lands), so publishing means \"this is the version I stand behind\", not \"this is what the floor sees\" |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L172",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 172,
+      "note": "Local editable draft; no live shop-floor publish claim"
+    },
+    {
+      "id": "library",
+      "on_screen": "Keep the know-how. / Saved routing / Part library",
+      "source_sentence": "| P1 | E1-1 | As a **Senior Engineer**, I want to create a part master with its full routing — ordered steps, each with compatible machine types, cycle time per piece, and setup time — so that the routing decision is made once and reused on every future order. | • Part fields: part number, name, material, default quantity, notes<br>• Steps are an ordered list; each step has: label, compatible machine categories (one or more), cycle time per piece, setup time (flat, does not scale with quantity)<br>• Steps can be added, removed, and reordered<br>• A part with at least one step can be saved to the library<br>• Each step can carry an operation color, picked per step from a fixed palette (customer request, 2026-08-08) — it renders as a stripe on that step's blocks on the board; the step label also now appears in the block's own text, not only its tooltip<br>• **Operation colors are assigned automatically and by POSITION** (customer decision, 2026-08-15, answering \"instead of doing this manually, should this be done automatically instead?\"): step 1 takes the first palette color in every part, step 2 the second, and so on, so the same position reads the same across parts and no routing ever repeats a color. Hand-picking still overrides, and claims its color first. Routings longer than the 12-color palette (the 鏡筒 cards run 21 steps) fall back to generated hues, so uniqueness holds at any length. The tradeoff, accepted deliberately: the same operation at different positions in two routings gets different colors — the routing cards share no common label vocabulary anyway (1 NC / 1NC (0.5残し) / 1 5軸), so position carries more meaning than the label does |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L68",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 68,
+      "note": "Reusable part route"
+    },
+    {
+      "id": "repeat",
+      "on_screen": "Start from what you know. / New order / Create order / Own routing copy",
+      "source_sentence": "| P1 | E2-2 | As an **Operation Manager**, I want each order to carry its own routing snapshot that I can tweak — cycle times, setup times, inspection times — so that a one-off variation doesn't force a library edit. | • Expanding \"adjust routing\" shows the routing as an editable timeline<br>• Per-order edits to step times are allowed before and after scheduling; after scheduling, edits trigger the reschedule flow (E6-1)<br>• Per-order edits never write back to the part master<br>• Each step can carry a free-text note specific to THIS order (\"use the new fixture\") — on the order's snapshot, never on the part master, so a note about one job can't leak onto every future order for the same part (customer request, 2026-08-08)<br>• Each step can carry the date it was **actually completed** (customer request, 2026-08-08; the button and its vocabulary were \"Delivered\"/納品済み until 2026-08-16, when the customer asked for **\"complete\"** — a step is completed, and the ORDER is what gets delivered, so the order-level wording is deliberately left alone): stamped with one click from the step's card in the details panel, correctable to an exact date in the same expander, and cleared the same way. Shown against that step's expected date — green when it hit the target, red when it ran past — and an order reads as delivered, dated by its last step, once every step is marked. A record only: it moves no blocks, refuses no placement, and work never scheduled at all can still be marked delivered<br>• Each step can also carry its own expected delivery date (納期予定日), set in the same \"adjust routing\" editor and offered for every step type including outsourced ones (customer request, 2026-08-08) — a target the panel displays and marks late once the step's last block ends after that day closes; it never constrains placement, exactly like the order-level deadline |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L83",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 83,
+      "note": "Each new order receives independent route snapshot"
+    },
+    {
+      "id": "intake",
+      "on_screen": "Part / Quantity / Deadline",
+      "source_sentence": "| P1 | E2-1 | As an **Operation Manager**, I want to create an order in two clicks — pick the part, confirm quantity and deadline — so that repeat orders take seconds. | • New-order dialog: part picker → quantity (pre-filled with part default) → deadline (date + time, defaults to end of current week)<br>• \"Add\" places the order in the unscheduled list with a generated order number<br>• Routing details are collapsed by default; the happy path never opens them |",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L82",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 82,
+      "note": "Part picker and order fields"
+    },
+    {
+      "id": "signoff",
+      "on_screen": "SOMA / Scheduler / Plan your next move.",
+      "source_sentence": "**P1 goal:** replace the whiteboard with a digital planning board the team trusts for daily use — senior engineers for routing knowledge, the operation manager for scheduling. No shop-floor data feeds — the schedule is maintained manually by the operation manager, as today.",
+      "source_url": "file:///E:/Projects/Soma/Arch/scheduler_brd.md#L16",
+      "source_path": "E:\\Projects\\Soma\\Arch\\scheduler_brd.md",
+      "source_line": 16,
+      "note": "Brand/product name and invitation, no numerical result claim"
+    }
+  ],
+  "example_data": {
+    "disclosure": "Illustrative workflow • Example data",
+    "order_ids": [
+      "OR-025",
+      "OR-026",
+      "OR-018"
+    ],
+    "part": "Diffuser ring",
+    "quantity": 24,
+    "machines": [
+      "NC-01",
+      "MC-01",
+      "CMM-01"
+    ],
+    "days": [
+      "Tue20Oct",
+      "Fri deadline for new order"
+    ],
+    "completion_before": "Tue 14:00",
+    "completion_after": "Tue 16:00",
+    "status": "Illustrative scenario; not customer measurements or a production record",
+    "date": "Tuesday 20 October 2026",
+    "time_window": "08:00–16:00",
+    "scenario": "Turning needs a later slot; projected completion moves from14:00 to16:00 while an independent pinned commitment stays put."
+  },
+  "omitted_future_features": [
+    "Live machine or operator feeds",
+    "ERP integrations",
+    "Multi-user collaboration",
+    "Automatic floor publication",
+    "Performance statistics"
+  ],
+  "brand_assets": [
+    {
+      "path": "E:\\Projects\\Soma\\website\\scheduler-launch\\assets\\logo_soma_dark.png",
+      "sha256": "a17a1c9e25d25b471646ded8079b2d92df6b66f65f6b2e3e2100be5035a934ff"
+    },
+    {
+      "path": "E:\\Projects\\Soma\\website\\scheduler-launch\\assets\\logo_soma_light.png",
+      "sha256": "5bab88e5e7329981f94765a26e64d365a230f39ed7a113f2cc91095dddf6cc34"
+    }
+  ],
+  "positioning_copy": [
+    "Precision in the plan.",
+    "Plans meet real life",
+    "Plan your next move."
+  ],
+  "copy_note": "Positioning is an invitation, not a measured outcome. All identifiers, quantities and times are illustrative. Interface verbs are traces of the corresponding BRD stories.",
+  "observed_on_screen_copy": [
+    "01",
+    "02",
+    "03",
+    "08:00",
+    "10:00",
+    "12:00",
+    "14:00",
+    "14:00 → 16:00 · proposed",
+    "16:00",
+    "24",
+    "24 pieces",
+    "24 pieces  /  Turning",
+    "After",
+    "Apply changes",
+    "Before",
+    "CMM",
+    "CMM inspection",
+    "CMM-01",
+    "Changes applied",
+    "Compatible machines",
+    "Create order",
+    "Deadline",
+    "Diffuser ring",
+    "Draft",
+    "Fixed commitment",
+    "Fri 16:00",
+    "ILLUSTRATIVE WORKFLOW · EXAMPLE DATA",
+    "Inspection",
+    "Keep the",
+    "Keep the know-how.",
+    "MC-01",
+    "Make room for change.",
+    "Make room.",
+    "Milling",
+    "Move",
+    "NC-01",
+    "NEW ORDER",
+    "OR-018",
+    "OR-025",
+    "OR-025 · Diffuser ring · 24 pcs",
+    "OR-026 · Unscheduled",
+    "Order created",
+    "Own routing copy",
+    "PLANS MEET REAL LIFE",
+    "PRECISION IN THE PLAN.",
+    "Part",
+    "Part library · Diffuser ring",
+    "Pinned",
+    "Pinned work stays put.",
+    "Pinned work unchanged",
+    "Plan your next move.",
+    "Planner",
+    "Plans",
+    "Projected completion",
+    "Proposed move",
+    "Proposed moves",
+    "Quantity",
+    "REVIEW CHANGES",
+    "Reusable part template",
+    "Review.",
+    "SCHEDULER",
+    "SOMA / SCHEDULER",
+    "Scheduler",
+    "See the",
+    "See the whole route.",
+    "See what",
+    "See what follows.",
+    "Start from",
+    "Start from what you know.",
+    "TUE 20 OCT",
+    "Then commit.",
+    "Tue 14:00",
+    "Tue 16:00",
+    "Turning",
+    "Turning needs a later slot.",
+    "Turning → later",
+    "Your call.",
+    "Your plan.",
+    "Your plan. Your call.",
+    "change.",
+    "follows.",
+    "know-how.",
+    "one step.",
+    "what you know.",
+    "whole route."
+  ]
+}

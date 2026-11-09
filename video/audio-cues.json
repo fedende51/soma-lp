@@ -1,0 +1,69 @@
+{
+  "duration": 32,
+  "bpm": 120,
+  "key": "D minor",
+  "cue_alignment": [
+    {
+      "visual_time": 1.5,
+      "sound_peak_time": 1.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 9.5,
+      "sound_peak_time": 9.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 16,
+      "sound_peak_time": 16,
+      "type": "click"
+    },
+    {
+      "visual_time": 17.5,
+      "sound_peak_time": 17.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 20.5,
+      "sound_peak_time": 20.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 24.5,
+      "sound_peak_time": 24.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 28,
+      "sound_peak_time": 28,
+      "type": "click"
+    },
+    {
+      "visual_time": 30.5,
+      "sound_peak_time": 30.5,
+      "type": "click"
+    },
+    {
+      "visual_time": 4,
+      "sound_peak_time": 4,
+      "type": "morph"
+    },
+    {
+      "visual_time": 8,
+      "sound_peak_time": 8,
+      "type": "reveal"
+    },
+    {
+      "visual_time": 22,
+      "sound_peak_time": 22,
+      "type": "morph"
+    },
+    {
+      "visual_time": 30,
+      "sound_peak_time": 30,
+      "type": "resolve"
+    }
+  ],
+  "peak_before_normalization": 0.86,
+  "listening_review": false
+}
