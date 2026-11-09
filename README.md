@@ -21,7 +21,7 @@
 
 ## Live Site
 
-**[fedende51.github.io/soma-lp](https://fedende51.github.io/soma-lp/)** — public, published from `main` by GitHub Pages.
+**[soma-mlp.vercel.app](https://soma-mlp.vercel.app/)** — public, published from `main` by Vercel.
 
 A password-protected preview is also hosted at [renderpopstudio.com/soma](https://www.renderpopstudio.com/soma); contact the project owner for its access password.
 
@@ -60,13 +60,13 @@ npm install
 
 ## Deployment
 
-Every push to `main` publishes the site. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) uploads `dist/` exactly as committed to GitHub Pages; there is no build step, so what you see on the local server is what goes live. A deploy can also be started by hand from the repository's **Actions** tab (**Deploy to GitHub Pages → Run workflow**).
+The site is hosted on Vercel (project `soma-mlp`). Every push to `main` deploys to production, and pushes to other branches get their own preview URL, which Vercel reports on the commit in GitHub.
 
-The repository is also connected to Vercel, which deploys each push as well. [`vercel.json`](vercel.json) tells it to skip the install and build steps and serve `dist/` as is; it overrides the project's dashboard settings, so the Vercel project needs no framework or build configuration.
+[`vercel.json`](vercel.json) tells Vercel to skip the install and build steps and serve `dist/` exactly as committed, so what you see on the local server is what goes live. The file overrides the project's dashboard settings, so the Vercel project needs no framework or build configuration.
 
-The GitHub Pages site is served from the `/soma-lp/` subpath, so keep links and asset references in `dist/` relative (`assets/logo.png`, not `/assets/logo.png`).
+Keep links and asset references in `dist/` relative (`assets/logo.png`, not `/assets/logo.png`) so the same files also work from a subfolder, as on the RenderPop Studio preview.
 
-`dist/` is plain static files and can be copied to any other static host. The optional PHP password screen used for the RenderPop Studio preview is described in [hosting/php/README.md](hosting/php/README.md); it is not used on GitHub Pages, and its private configuration is not part of this repository.
+`dist/` is plain static files and can be copied to any other static host. The optional PHP password screen used for the RenderPop Studio preview is described in [hosting/php/README.md](hosting/php/README.md); it is not used on Vercel, and its private configuration is not part of this repository.
 
 ## Source Map
 
@@ -79,7 +79,6 @@ The GitHub Pages site is served from the `/soma-lp/` subpath, so keep links and 
 | `video/` | Launch-film composition, rendering, and audio workflow |
 | `scheduler-launch/` | Additional launch-film source and its own workflow notes |
 | `hosting/php/` | Optional password-screen source and integration instructions |
-| `.github/workflows/deploy.yml` | Publishes `dist/` to GitHub Pages on every push to `main` |
 | `vercel.json` | Serves `dist/` on Vercel with no install or build step |
 | `DESIGN.md`, `MOTION.md`, `ASSETS.md` | Design direction, motion behavior, and asset provenance |
 
@@ -108,7 +107,7 @@ $env:SOMA_PREVIEW_PASSWORD = '<preview password supplied by the owner>'
 
 Clear it after use with `Remove-Item Env:SOMA_PREVIEW_PASSWORD`. Password values, `config.php`, FTP profiles, runtime state and generated delivery packages stay outside Git.
 
-`scripts/deploy-renderpop.py` publishes a locally prepared PHP delivery to the RenderPop Studio preview (separate from the GitHub Pages site) over verified FTPS using the existing RenderPop Studio FileZilla entry. It stages and checks every website file before activation, preserves the host's password configuration and runtime, and retains a rollback copy outside the public folder. Hosting credentials are read from the local profile and are not included in this repository.
+`scripts/deploy-renderpop.py` publishes a locally prepared PHP delivery to the RenderPop Studio preview (separate from the Vercel site) over verified FTPS using the existing RenderPop Studio FileZilla entry. It stages and checks every website file before activation, preserves the host's password configuration and runtime, and retains a rollback copy outside the public folder. Hosting credentials are read from the local profile and are not included in this repository.
 
 ## Assets and Credits
 
