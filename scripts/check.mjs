@@ -6,7 +6,7 @@ const html=fs.readFileSync('dist/index.html','utf8');
 const local=[...html.matchAll(/(?:src|href)="([^"#?]+)"/g)].map(m=>m[1]).filter(p=>!p.includes(':'));
 for(const asset of local)assert(fs.existsSync(path.join('dist',asset)),`Missing asset: ${asset}`);
 assert.equal((html.match(/<h1\b/g)||[]).length,1,'Exactly one h1');
-assert(html.includes('paolino.luis@gmail.com'),'Contact is configured');
+assert(html.includes('id="open-booking"'),'Booking is available');
 for(const lang of ['en','ja']){const s=fs.readFileSync(`dist/assets/captions-${lang}.vtt`,'utf8');assert(s.startsWith('WEBVTT'));assert(s.includes('00:32.000'));}
 const probe=JSON.parse(execFileSync('node_modules/@remotion/compositor-win32-x64-msvc/ffprobe.exe',['-v','quiet','-print_format','json','-show_streams','-show_format','dist/assets/soma-launch.mp4'],{encoding:'utf8'}));
 const video=probe.streams.find(s=>s.codec_type==='video');const audio=probe.streams.find(s=>s.codec_type==='audio');

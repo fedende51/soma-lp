@@ -76,7 +76,7 @@ const ja = {
   "message": "改善したいこと（任意）",
   "prepareEmail": "お問い合わせメールを作成 <span>↗</span>",
   "emailNote": "メールアプリが開きます。自動送信・予約確定は行われません。",
-  "emailFallback": "メールアプリが開かない場合は、下の内容をコピーして paolino.luis@gmail.com へお送りください。",
+  "emailFallback": "メールアプリが開かない場合は、下の内容をコピーして hello@somakk.com へお送りください。",
   "copyRequest": "内容をコピー ↗",
   "heroProof": "精密加工の現実に、寄り添う。",
   "heroOperation": "繰り返し使える工程",
@@ -127,8 +127,8 @@ $('#booking-form').addEventListener('submit',ev=>{
   const d=new FormData(ev.target);
   const subject=`SOMA Scheduler demo - ${d.get('company')}`;
   const body=locale==='ja'?`株式会社SOMA ご担当者様\n\nSOMA Schedulerのデモを希望します。\n\nお名前: ${d.get('name')}\n会社名: ${d.get('company')}\nメール: ${d.get('email')}\n希望日時: ${d.get('date')} ${d.get('time')} 日本時間（UTC+9）\n所要時間: 30分\n\n相談したいこと:\n${d.get('message') || 'デモでお話しできれば幸いです。'}\n\n日時のご確認をお願いいたします。`:`Hello SOMA Co., Ltd. team,\n\nI'd like to explore SOMA Scheduler in a demo.\n\nName: ${d.get('name')}\nCompany: ${d.get('company')}\nEmail: ${d.get('email')}\nPreferred time: ${d.get('date')} at ${d.get('time')} Japan time (UTC+9)\nDuration: 30 minutes\n\nWhat we'd like to improve:\n${d.get('message') || "Let's discuss our workflow during the demo."}\n\nPlease confirm whether this time works. Thank you.`;
-  $('#email-fallback').hidden=false;$('#request-text').value=`To: paolino.luis@gmail.com\nSubject: ${subject}\n\n${body}`;
-  window.location.href=`mailto:paolino.luis@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  $('#email-fallback').hidden=false;$('#request-text').value=`To: hello@somakk.com\nSubject: ${subject}\n\n${body}`;
+  window.location.href=`mailto:hello@somakk.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
 });
 $('#copy-request').addEventListener('click',async()=>{try{await navigator.clipboard.writeText($('#request-text').value);$('#copy-status').textContent=locale==='ja'?'コピーしました':'Copied';}catch{$('#request-text').select();$('#copy-status').textContent=locale==='ja'?'選択した内容をコピーしてください':'Select and copy the text';}});
 setLanguage(locale);

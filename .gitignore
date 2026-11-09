@@ -33,3 +33,6 @@ video/licensed-audio/*.mp3
 # Password configuration and local runtime state
 hosting/php/config.php
 hosting/php/runtime/
+
+# Vercel CLI link
+.vercel/

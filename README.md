@@ -68,6 +68,16 @@ Keep links and asset references in `dist/` relative (`assets/logo.png`, not `/as
 
 `dist/` is plain static files and can be copied to any other static host. The optional PHP password screen used for the RenderPop Studio preview is described in [hosting/php/README.md](hosting/php/README.md); it is not used on Vercel, and its private configuration is not part of this repository.
 
+### Password gate
+
+On Vercel the whole site sits behind a "Coming soon" page with a password field. [`middleware.js`](middleware.js) runs on Vercel's servers before any file is served: visitors without a valid cookie see the gate on every URL, and the correct password sets a 30-day cookie and takes them on to the page they asked for.
+
+- The password is read from the **`SITE_PASSWORD`** environment variable in the Vercel project (Settings → Environment Variables, for Production and Preview). It is never in the repository or the page.
+- If `SITE_PASSWORD` is not set, nobody can get in.
+- Changing the password signs everyone out.
+- The local server (`npm run dev`) does not run the gate.
+- To launch publicly, delete `middleware.js` and push.
+
 ## Source Map
 
 | Path | Purpose |
@@ -80,6 +90,7 @@ Keep links and asset references in `dist/` relative (`assets/logo.png`, not `/as
 | `scheduler-launch/` | Additional launch-film source and its own workflow notes |
 | `hosting/php/` | Optional password-screen source and integration instructions |
 | `vercel.json` | Serves `dist/` on Vercel with no install or build step |
+| `middleware.js` | "Coming soon" password gate in front of the Vercel site |
 | `DESIGN.md`, `MOTION.md`, `ASSETS.md` | Design direction, motion behavior, and asset provenance |
 
 The primary branch is `main`. `dist/` contains maintained source and required browser assets; retain it in the repository. Third-party design-reference clones and local deployment artifacts are not site source.
@@ -145,7 +156,7 @@ The website introduces Scheduler; it contains no interactive scheduling sample. 
 
 ## Booking
 
-Share `/?demo=1#book-demo`. The dialog collects a weekday and Japan time (UTC+9), then prepares an email to **paolino.luis@gmail.com**. Nothing is sent or reserved automatically. A copyable fallback is provided. A human reply confirms the appointment.
+Share `/?demo=1#book-demo`. The dialog collects a weekday and Japan time (UTC+9), then prepares an email to **hello@somakk.com**. Nothing is sent or reserved automatically. A copyable fallback is provided. A human reply confirms the appointment.
 
 ## Film
 
