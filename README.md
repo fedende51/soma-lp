@@ -62,7 +62,9 @@ npm install
 
 Every push to `main` publishes the site. [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml) uploads `dist/` exactly as committed to GitHub Pages; there is no build step, so what you see on the local server is what goes live. A deploy can also be started by hand from the repository's **Actions** tab (**Deploy to GitHub Pages → Run workflow**).
 
-The site is served from the `/soma-lp/` subpath, so keep links and asset references in `dist/` relative (`assets/logo.png`, not `/assets/logo.png`).
+The repository is also connected to Vercel, which deploys each push as well. [`vercel.json`](vercel.json) tells it to skip the install and build steps and serve `dist/` as is; it overrides the project's dashboard settings, so the Vercel project needs no framework or build configuration.
+
+The GitHub Pages site is served from the `/soma-lp/` subpath, so keep links and asset references in `dist/` relative (`assets/logo.png`, not `/assets/logo.png`).
 
 `dist/` is plain static files and can be copied to any other static host. The optional PHP password screen used for the RenderPop Studio preview is described in [hosting/php/README.md](hosting/php/README.md); it is not used on GitHub Pages, and its private configuration is not part of this repository.
 
@@ -78,6 +80,7 @@ The site is served from the `/soma-lp/` subpath, so keep links and asset referen
 | `scheduler-launch/` | Additional launch-film source and its own workflow notes |
 | `hosting/php/` | Optional password-screen source and integration instructions |
 | `.github/workflows/deploy.yml` | Publishes `dist/` to GitHub Pages on every push to `main` |
+| `vercel.json` | Serves `dist/` on Vercel with no install or build step |
 | `DESIGN.md`, `MOTION.md`, `ASSETS.md` | Design direction, motion behavior, and asset provenance |
 
 The primary branch is `main`. `dist/` contains maintained source and required browser assets; retain it in the repository. Third-party design-reference clones and local deployment artifacts are not site source.

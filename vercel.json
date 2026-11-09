@@ -1,0 +1,7 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "echo 'No install: dist/ is committed static output'",
+  "buildCommand": "echo 'No build: dist/ is committed static output'",
+  "outputDirectory": "dist"
+}
