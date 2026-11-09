@@ -92,7 +92,7 @@ html[data-theme=dark] .board-demo{
 }
 @media(max-width:640px){
   .board-demo{--bd-label:84px}
-  .bd-grid{min-width:680px}
+  .bd-grid{min-width:900px}
   .bd-intro p{font-size:14px}
   .bd-machine{padding-left:10px}.bd-labels .bd-head{padding-left:10px}
 }
